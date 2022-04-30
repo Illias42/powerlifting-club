@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powerlifting Club | Реєстрація</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -62,17 +63,17 @@
                 Приєднайтеся до одного з найкращих клубів пауерліфтингу.
             </p>
             <form action="#" method="POST" class="register-container">
-                <label for="name">Ім'я</label>
-                <input type="text" placeholder="Введіть ім'я" name="name" class="register-input" required>
+                <label for="reg-name">Ім'я</label>
+                <input type="text" placeholder="Введіть ім'я" name="reg-name" id="reg-name" class="register-input" required>
 
-                <label for="last-name">Прізвище</label>
-                <input type="text" placeholder="Введіть прізвище" name="last-name" class="register-input" required>
+                <label for="reg-last-name">Прізвище</label>
+                <input type="text" placeholder="Введіть прізвище" name="reg-last-name" id="reg-last-name" class="register-input" required>
 
-                <label for="email">Адреса електронної пошти</label>
-                <input type="email" placeholder="Введіть адресу електронної пошти" name="email" class="register-input" required>
+                <label for="reg-email">Адреса електронної пошти</label>
+                <input type="email" placeholder="Введіть адресу електронної пошти" name="reg-email" id="reg-email" class="register-input" required>
 
-                <label for="password">Пароль</label>
-                <input type="password" placeholder="Введіть пароль" name="password" class="register-input" required>
+                <label for="reg-password">Пароль</label>
+                <input type="password" placeholder="Введіть пароль" name="reg-password" id="reg-password" class="register-input" required>
 
                 <button type="submit" class="submit-btn">Зареєструватися</button>
             </form>
@@ -88,14 +89,14 @@
                 <h2 class="modal-title">Вхід в обліковий запис</h2>
             </header>
             <div class="login-container">
-                <label for="email">Адреса електронної пошти</label>
-                <input type="email" placeholder="Введіть адресу електронної пошти" name="email" class="login-input" required>
+                <label for="log-email">Адреса електронної пошти</label>
+                <input type="email" placeholder="Введіть адресу електронної пошти" name="log-email" id="log-email" class="login-input" required>
 
-                <label for="password">Пароль</label>
-                <input type="password" placeholder="Введіть пароль" name="password" class="login-input" required>
+                <label for="log-password">Пароль</label>
+                <input type="password" placeholder="Введіть пароль" name="log-password" id="log-password" class="login-input" required>
 
                 <button type="submit" class="submit-btn">Увійти</button>
-                <a href="#" class="forgot-psw">Забули пароль?</a>
+                <a href="./forgotpsw.html" class="forgot-psw">Забули пароль?</a>
                 <footer class="login-footer">
                     <a href="#" class="register-account">Реєстрація</a>
                 </footer>
