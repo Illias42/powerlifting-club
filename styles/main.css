@@ -12,6 +12,9 @@ body {
     font-weight: 400;
     background-color: rgb(25, 25, 25);
     color: rgb(240, 240, 240);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper {
@@ -142,6 +145,21 @@ h1 {
     text-align: center;
 }
 
+
+.footer {
+    color: #f0f0f0;
+    line-height: 1.5;
+    font-size: 0.8em;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: auto;
+    text-align: center;
+    background-color: rgb(10, 10, 10);
+}
+
+.footer span {
+    font-size: 1.2em;
+}
 
 /* ========== MEDIA QUERIES ========== */
 

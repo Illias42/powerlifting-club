@@ -22,13 +22,18 @@ h1 {
 .standards-section {
     max-width: 885px;
     margin: 50px auto;
+    text-align: center;
+}
+
+.standards-section img {
+    max-width: 100%;
 }
 
 .standards-title {
+    margin-bottom: 30px;
     color: rgb(50, 50, 50);
     font-size: 1.3em;
     font-weight: 500;
-    text-align: center;
     line-height: 1.5;
 }
 
