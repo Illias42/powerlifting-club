@@ -119,6 +119,11 @@ h1 {
     color: rgb(200, 220, 15);
 }
 
+.login-btn:hover {
+    transition: opacity 300ms ease-out;
+    opacity: 0.8;
+}
+
 .fa-circle-user {
     font-size: 25px;
     color: rgb(240, 240, 240);
