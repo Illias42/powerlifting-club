@@ -84,3 +84,10 @@ h1 {
     display: none;
     visibility: hidden;
 }
+
+.bmi-err,
+.cal-err {
+    color: tomato;
+    font-weight: 500;
+    font-size: 1.1em;
+}

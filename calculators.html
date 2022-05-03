@@ -72,11 +72,12 @@
                         <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" required>
                         <button type="button" class="submit-btn calc-btn bmi-btn">Обчислити</button>
                         <div class="bmi-result hidden">
-                            <p>Ваш індекс маси тіла: 
+                            <p class="bmi-message">Ваш індекс маси тіла: 
                                 <span id="bmi"></span>
                                 <br>
                                 Отже, ваша вага <span id="bmi-status"></span>
                             </p>
+                            <p class="bmi-err hidden">Помилка! Ви не вказали свої дані.</p>
                         </div>
                     </form>
                 </div>
@@ -105,9 +106,10 @@
                         </select>
                         <button type="button" class="submit-btn calc-btn cal-btn">Обчислити</button>
                         <div class="cal-result hidden">
-                            <p>Ваша добова норма калорій: 
+                            <p class="cal-message">Ваша добова норма калорій: 
                                 <span id="calories"></span>
                             </p>
+                            <p class="cal-err hidden">Помилка! Ви не вказали свої дані.</p>
                         </div>
                     </form>
                 </div>

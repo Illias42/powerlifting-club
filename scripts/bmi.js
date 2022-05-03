@@ -7,6 +7,16 @@ function calculateBMI() {
     const result = document.querySelector('.bmi-result');
     const bmiField = document.getElementById('bmi');
     const status = document.getElementById('bmi-status');
+    const bmiMessage = document.querySelector('.bmi-message');
+    const bmiErr = document.querySelector('.bmi-err');
+
+    if(height === '' || weight === '') {
+        bmiMessage.classList.add('hidden');
+        bmiErr.classList.remove('hidden');
+        result.classList.remove('hidden');
+
+        return;
+    }
 
     let bmi = (weight / ((height * height) 
     / 10000)).toFixed(2);
@@ -22,5 +32,7 @@ function calculateBMI() {
         status.textContent = 'висока';
     }
 
+    bmiErr.classList.add('hidden');
+    bmiMessage.classList.remove('hidden');
     result.classList.remove('hidden');
 }

@@ -8,7 +8,17 @@ function calculateCalories() {
     const gender = document.querySelector('input[name="cal-gender"]:checked').value;
     const activity = document.getElementById('cal-activity').value;
     const resultContainer = document.querySelector('.cal-result');
+    const calMessage = document.querySelector('.cal-message');
+    const calErr = document.querySelector('.cal-err');
     const calories = document.getElementById('calories');
+
+    if(height === '' || weight === '' || age === '') {
+        calMessage.classList.add('hidden');
+        calErr.classList.remove('hidden');
+        resultContainer.classList.remove('hidden');
+
+        return;
+    }
 
     if(gender === 'male') {
         let result = (10 * weight) + (6.25 * height) - (5 * age) + 5;
@@ -31,6 +41,8 @@ function calculateCalories() {
                 break;
         }
 
+        calErr.classList.add('hidden');
+        calMessage.classList.remove('hidden');
         calories.textContent = result.toFixed(0);
         resultContainer.classList.remove('hidden');
 
@@ -56,6 +68,8 @@ function calculateCalories() {
                 break;
         }
 
+        calErr.classList.add('hidden');
+        calMessage.classList.remove('hidden');
         calories.textContent = result.toFixed(0);
         resultContainer.classList.remove('hidden');
         
