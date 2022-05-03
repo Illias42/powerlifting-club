@@ -1,0 +1,86 @@
+body {
+    background-color: inherit;
+    color: black;
+}
+
+.header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.main-content {
+    margin-top: 90px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 0;
+    color: black;
+    text-shadow: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.calc-container {
+    padding: 20px;
+    flex-basis: 500px;
+    flex-grow: 1;
+    margin: 30px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.calc-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.calc-input {
+    outline: none;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    transition: border-color 200ms ease-out;
+}
+
+.calc-input:hover,
+.calc-input:focus {
+    border-color: rgb(150, 150, 150);
+}
+
+.calc-btn {
+    background-color: #E63946;
+}
+
+.result p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+#bmi,
+#bmi-status,
+#calories {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+#cal-gender {
+    border: none;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}

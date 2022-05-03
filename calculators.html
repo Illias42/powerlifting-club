@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powerlifting Club | Нормативи</title>
+    <title>Powerlifting Club | Калькулятори</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/standards.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/calculators.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
     <script src="./scripts/login.js" defer></script>
+    <script src="./scripts/bmi.js" defer></script>
+    <script src="./scripts/calories.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -59,39 +61,57 @@
 
     <main class="main-content">
         <div class="wrapper">
-            <h1>Нормативи</h1>
-            <section class="standards-section">
-                <h2 class="standards-title">Пауерліфтинг з використанням спеціального екіпірування <br> <span>Чоловіки (сума триборства)</span></h2>
-                <img src="./assets/images/standards-table/first.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title"><span>Чоловіки (жим лежачи)</span></h2>
-                <img src="./assets/images/standards-table/second.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title">Класичний пауерліфтинг <br> <span>Чоловіки (сума триборства)</span></h2>
-                <img src="./assets/images/standards-table/third.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title"><span>Чоловіки (жим лежачи)</span></h2>
-                <img src="./assets/images/standards-table/fourth.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title">Пауерліфтинг з використанням спеціального екіпірування <br> <span class="women">Жінки (сума триборства)</span></h2>
-                <img src="./assets/images/standards-table/fifth.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title"><span class="women">Жінки (жим лежачи)</span></h2>
-                <img src="./assets/images/standards-table/sixth.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title">Класичний пауерліфтинг <br> <span class="women">Жінки (сума триборства)</span></h2>
-                <img src="./assets/images/standards-table/seventh.png" alt="Таблиця нормативів">
-            </section>
-            <section class="standards-section">
-                <h2 class="standards-title"><span class="women">Жінки (жим лежачи)</span></h2>
-                <img src="./assets/images/standards-table/eighth.png" alt="Таблиця нормативів">
-            </section>
+            <h1>Спортивні калькулятори</h1>
+            <div class="container">
+                <div class="calc-container">
+                    <h2 class="calc-title">Індекс маси тіла</h2>
+                    <form class="calc">
+                        <label for="bmi-height">Зріст [см]</label>
+                        <input type="number" placeholder="Введіть ваш зріст" name="bmi-height" id="bmi-height" class="calc-input" required>
+                        <label for="bmi-weight">Вага [кг]</label>
+                        <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" required>
+                        <button type="button" class="submit-btn calc-btn bmi-btn">Обчислити</button>
+                        <div class="bmi-result hidden">
+                            <p>Ваш індекс маси тіла: 
+                                <span id="bmi"></span>
+                                <br>
+                                Отже, ваша вага <span id="bmi-status"></span>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="calc-container">
+                    <h2 class="calc-title">Калькулятор калорій</h2>
+                    <form class="calc">
+                        <label for="cal-height">Зріст [см]</label>
+                        <input type="number" placeholder="Введіть ваш зріст" name="cal-height" id="cal-height" class="calc-input" required>
+                        <label for="cal-weight">Вага [кг]</label>
+                        <input type="number" placeholder="Введіть вашу вагу" name="cal-weight" id="cal-weight" class="calc-input" required>
+                        <label for="cal-age">Вік [в роках]</label>
+                        <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" required>
+                        <label for="cal-gender">Стать</label>
+                        <fieldset id="cal-gender">
+                            <input type="radio" value="male" name="cal-gender" checked>  Чоловік
+                            <br>
+                            <input type="radio" value="female" name="cal-gender">  Жінка
+                        </fieldset>
+                        <label for="cal-activity">Фізична активність</label>
+                        <select name="cal-activity" id="cal-activity" class="calc-input">
+                            <option value="1.2">Немає фізичної активності</option>
+                            <option value="1.375">Спорт 1-3 рази на тиждень</option>
+                            <option value="1.55">Спорт 3-5 разів на тиждень</option>
+                            <option value="1.725">Спорт кожен день</option>
+                            <option value="1.9">Дуже висока фізична активність</option>
+                        </select>
+                        <button type="button" class="submit-btn calc-btn cal-btn">Обчислити</button>
+                        <div class="cal-result hidden">
+                            <p>Ваша добова норма калорій: 
+                                <span id="calories"></span>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -118,6 +138,7 @@
             </div>
         </form>
     </div>
+
     <footer class="footer">
         <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
     </footer>
