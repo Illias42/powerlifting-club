@@ -137,3 +137,12 @@
     background-color: transparent;
     color: rgb(80, 80, 230);
 }
+
+#log-errors {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(177, 1, 1, 1);
+    border-radius: 5px;
+    background-color: rgba(177, 1, 1, 0.2);
+    display: none;
+}

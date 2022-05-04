@@ -47,3 +47,14 @@ h1 {
 .register-input:focus {
     border-color: rgb(150, 150, 150);
 }
+
+
+
+#reg-errors {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(177, 1, 1, 1);
+    border-radius: 5px;
+    background-color: rgba(177, 1, 1, 0.2);
+    display: none;
+}
