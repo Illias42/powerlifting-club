@@ -60,6 +60,7 @@ h1 {
 }
 
 .calc-btn {
+    margin-top: 20px;
     background-color: #E63946;
 }
 
@@ -68,14 +69,23 @@ h1 {
     line-height: 1.5;
 }
 
+.cal-result,
+.ipf-result,
+.bmi-result {
+    padding: 7px 0;
+    font-size: 1.1em;
+}
+
+
 #bmi,
 #bmi-status,
-#calories {
+#calories,
+#display-glp {
     font-weight: 500;
     font-size: 1.1em;
 }
 
-#cal-gender {
+fieldset {
     border: none;
     padding: 10px;
 }
@@ -86,7 +96,8 @@ h1 {
 }
 
 .bmi-err,
-.cal-err {
+.cal-err,
+.ipf-err {
     color: tomato;
     font-weight: 500;
     font-size: 1.1em;
