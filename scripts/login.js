@@ -60,6 +60,13 @@ async function loginSubmit(e) {
         closeModal();
     } else {
         const message = "Не вдалось увійти. Перевірте введені дані.";
-        console.log(message);
+        const errBlock = document.getElementById('log-errors');
+        errBlock.innerHTML = message;
+        errBlock.style.display = "block";
+
+        setTimeout(() => {
+            errBlock.style.display = "none";
+            errBlock.innerHTML = "";
+        }, 10000)
     }
 }

@@ -29,9 +29,16 @@ async function registerSubmit(e) {
         localStorage.setItem("Token", `Bearer ${data.token}`);
         console.log(window.location.pathname);
         window.location.replace(window.location.pathname.replace('register.html', 'index.html'));
-    } else if (response.status === 201) {
-        const message = "Ця електронна адреса вже використовується.";
-        console.log(message)
+    } else if (response.status === 409) {
+        const message = "Дана електронна адреса вже використовується.";
+        const errBlock = document.getElementById('reg-errors');
+        errBlock.innerHTML = message;
+        errBlock.style.display = "block";
+
+        setTimeout(() => {
+            errBlock.style.display = "none";
+            errBlock.innerHTML = "";
+        }, 10000)
     } else {
         console.log(await response.text());
     }
