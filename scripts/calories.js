@@ -12,7 +12,10 @@ function calculateCalories() {
     const calErr = document.querySelector('.cal-err');
     const calories = document.getElementById('calories');
 
-    if(height === '' || weight === '' || age === '') {
+    if(height === '' || weight === '' ||
+         age === '' || age < 1 ||
+         age > 200 || height < 40 ||
+        height > 300 || weight < 2 || weight > 700) {
         calMessage.classList.add('hidden');
         calErr.classList.remove('hidden');
         resultContainer.classList.remove('hidden');
