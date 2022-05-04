@@ -32,3 +32,34 @@ function escapeClose(event) {
         modal.style.display = 'none';
     }
 }
+
+
+
+const loginForm = document.querySelector('.login-modal>.modal-content');
+loginForm.addEventListener('submit', loginSubmit);
+
+async function loginSubmit(e) {
+    e.preventDefault();
+
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    const formData = {email, password};
+
+    const response = await fetch('https://odbproject.herokuapp.com/api/users/login', {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
+
+    if (response.status === 201) {
+        const data = await response.json()
+        localStorage.setItem("Token", `Bearer ${data.token}`);
+        closeModal();
+    } else {
+        const message = "Не вдалось увійти. Перевірте введені дані.";
+        console.log(message);
+    }
+}
