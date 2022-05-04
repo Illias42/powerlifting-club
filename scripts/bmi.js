@@ -10,7 +10,10 @@ function calculateBMI() {
     const bmiMessage = document.querySelector('.bmi-message');
     const bmiErr = document.querySelector('.bmi-err');
 
-    if(height === '' || weight === '') {
+    if(height === '' || weight === '' || 
+        height < 40 || height > 300 ||
+        weight < 2 || 
+        weight > 700) {
         bmiMessage.classList.add('hidden');
         bmiErr.classList.remove('hidden');
         result.classList.remove('hidden');

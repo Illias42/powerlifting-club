@@ -67,9 +67,9 @@
                     <h2 class="calc-title">Індекс маси тіла</h2>
                     <form class="calc">
                         <label for="bmi-height">Зріст [см]</label>
-                        <input type="number" placeholder="Введіть ваш зріст" name="bmi-height" id="bmi-height" class="calc-input" required>
+                        <input type="number" placeholder="Введіть ваш зріст" name="bmi-height" id="bmi-height" class="calc-input" min="40" max="300" required>
                         <label for="bmi-weight">Вага [кг]</label>
-                        <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" required>
+                        <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" min="2" max="700" required>
                         <button type="button" class="submit-btn calc-btn bmi-btn">Обчислити</button>
                         <div class="bmi-result hidden">
                             <p class="bmi-message">Ваш індекс маси тіла: 
@@ -77,7 +77,7 @@
                                 <br>
                                 Отже, ваша вага <span id="bmi-status"></span>
                             </p>
-                            <p class="bmi-err hidden">Помилка! Ви не вказали свої дані.</p>
+                            <p class="bmi-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
                         </div>
                     </form>
                 </div>
@@ -85,11 +85,11 @@
                     <h2 class="calc-title">Калькулятор калорій</h2>
                     <form class="calc">
                         <label for="cal-height">Зріст [см]</label>
-                        <input type="number" placeholder="Введіть ваш зріст" name="cal-height" id="cal-height" class="calc-input" required>
+                        <input type="number" placeholder="Введіть ваш зріст" name="cal-height" id="cal-height" class="calc-input" min="40" max="300" required>
                         <label for="cal-weight">Вага [кг]</label>
-                        <input type="number" placeholder="Введіть вашу вагу" name="cal-weight" id="cal-weight" class="calc-input" required>
+                        <input type="number" placeholder="Введіть вашу вагу" name="cal-weight" id="cal-weight" class="calc-input" min="2" max="700" required>
                         <label for="cal-age">Вік [в роках]</label>
-                        <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" required>
+                        <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" min="1" max="200" required>
                         <label for="cal-gender">Стать</label>
                         <fieldset id="cal-gender">
                             <input type="radio" value="male" name="cal-gender" checked>  Чоловік
@@ -109,7 +109,7 @@
                             <p class="cal-message">Ваша добова норма калорій: 
                                 <span id="calories"></span>
                             </p>
-                            <p class="cal-err hidden">Помилка! Ви не вказали свої дані.</p>
+                            <p class="cal-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
                         </div>
                     </form>
                 </div>
