@@ -1,5 +1,5 @@
 if (localStorage.getItem("Token")) {
-    window.location.replace(window.location.pathname.replace('register.html', 'index.html'));
+    window.location.replace(window.location.pathname.replace('register.html', 'cabinet.html'));
 }
 
 
@@ -28,7 +28,7 @@ async function registerSubmit(e) {
         const data = await response.json();
         localStorage.setItem("Token", `Bearer ${data.token}`);
         console.log(window.location.pathname);
-        window.location.replace(window.location.pathname.replace('register.html', 'index.html'));
+        window.location.replace(window.location.pathname.replace('register.html', 'cabinet.html'));
     } else if (response.status === 409) {
         const message = "Дана електронна адреса вже використовується.";
         const errBlock = document.getElementById('reg-errors');

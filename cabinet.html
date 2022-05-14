@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerlifting Club</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/cabinet.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    <script src="./scripts/login.js" defer></script>
+    <script src="./scripts/quotes.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="./index.html" class="logo">Powerlifting Club</a>
+            <div class="menu-container">
+                <nav class="mobile-menu">
+                    <input id="menu-toggle" type="checkbox">
+                    <label class="menu-btn" for="menu-toggle">
+                        <span></span>
+                    </label>
+                    <button type="button" class="login-btn" title="Log in">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="#">Календар</a></li>
+                        <li><a href="./standards.html">Нормативи</a></li>
+                        <li><a href="#">Рекорди</a></li>
+                        <li><a href="./calculators.html">Калькулятори</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="./contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="desktop-menu">
+                    <ul class="nav-links">
+                        <li><a href="#">Календар</a></li>
+                        <li><a href="./standards.html">Нормативи</a></li>
+                        <li><a href="#">Рекорди</a></li>
+                        <li><a href="./calculators.html">Калькулятори</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="./contact.html">Контакти</a></li>
+                        <li>
+                            <button type="button" class="login-btn" title="Log in">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <ul class="cabinet-menu">
+                <li>
+                    <a href="./cabinet.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="cabinet-menu-span">Головна</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./achievements.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span class="cabinet-menu-span">Мої досягнення</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span class="cabinet-menu-span">Мої статті</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="cabinet-menu-span">Налаштування</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="cabinet-menu-span">Вийти</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <main class="cabinet-container">
+            <h1>Мій кабінет</h1>
+            <p class="welcome">
+                Добрий день, 
+                <span class="user-welcome" id="current-user">Володимире</span>!
+            </p>
+            <div class="avatar">
+                <img src="./assets/images/user.jpg" alt="Фото профілю" class="user-img">
+            </div>
+
+            <div class="quote-container">
+                <span id="quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maxime, maiores nesciunt facere aut cum vel tempora delectus, saepe nihil incidunt tempore ad voluptates accusantium. Qui earum quod minima dolorem.</span>
+            </div>
+        </main>
+    </div>
+
+    <div class="login-modal">
+        <form action="#" method="POST" class="modal-content">
+            <button type="button" class="close-modal xmark-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <header class="modal-header">
+                <h2 class="modal-title">Вхід в обліковий запис</h2>
+            </header>
+            <div class="login-container">
+                <div id="log-errors"></div>
+                <label for="log-email">Адреса електронної пошти</label>
+                <input type="email" placeholder="Введіть адресу електронної пошти" name="log-email" id="log-email" class="login-input" required>
+
+                <label for="log-password">Пароль</label>
+                <input type="password" placeholder="Введіть пароль" name="log-password" id="log-password" class="login-input" required>
+
+                <button type="submit" class="submit-btn">Увійти</button>
+                <a href="./forgotpsw.html" class="forgot-psw">Забули пароль?</a>
+                <footer class="login-footer">
+                    <a href="./register.html" class="register-account">Реєстрація</a>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+body {
+    background-color: inherit;
+    color: black;
+    min-height: 100vh;
+}
+
+.header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.main-content {
+    margin-top: 56px;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    padding: 35px 0 0 0;
+    min-width: 250px;
+    background-color: #222;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabinet-menu {
+    list-style: none;
+    position: fixed;
+}
+
+.cabinet-menu i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.cabinet-menu > li {
+    margin-bottom: 12px;
+    border-radius: 17px;
+    transition: background-color 0.3s ease;
+}
+
+.cabinet-menu > li:hover {
+    background-color: #353535;
+}
+
+.cabinet-menu > li > a {
+    padding: 10px 18px;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cabinet-container {
+    padding: 35px 20px 0 70px;
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 0;
+    color: rgb(20, 20, 20);
+    text-shadow: none;
+    margin-bottom: 50px;
+}
+
+.welcome {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.user-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    clip-path: circle();
+}
+
+.quote-container {
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+    margin: 150px auto 0 auto;
+    max-width: 50%;
+    font-size: 1.45em;
+    font-weight: 400;
+    color: #444;
+}
+
+@media (max-width: 767px) {
+    .cabinet-menu-span {
+        display: none;
+    }
+
+    .sidebar {
+        min-width: 65px;
+    }
+
+    .cabinet-menu i {
+        font-size: 1em;
+    }
+
+    .cabinet-container {
+        padding: 35px 20px 0 20px;
+    }
+}
