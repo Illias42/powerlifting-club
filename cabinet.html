@@ -87,7 +87,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="exit-btn" href="#">
+                    <a onclick="exit()" href="#">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="cabinet-menu-span">Вийти</span>
                     </a>
@@ -139,5 +139,11 @@
     <footer class="footer">
         <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
     </footer>
+    <script>
+        function exit() {
+            localStorage.removeItem("Token");
+            window.location.replace('./index.html');
+        }
+    </script>
 </body>
 </html>

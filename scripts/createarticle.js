@@ -1,5 +1,4 @@
 const form = document.getElementById('article-form');
-console.log(form);
 form.addEventListener("submit", submitArticle);
 
 const titleInput = document.getElementById('title-input');
@@ -25,7 +24,7 @@ async function submitArticle(e) {
     });
 
     if(response.status === 201) {
-        window.location.replace('/myarticles.html');
+        window.location.replace('./myarticles.html');
     }
 }
 
