@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powerlifting Club</title>
+    <title>Powerlifting Club | Створення статті</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,11 +68,47 @@
     </header>
 
     <div class="main-content">
+        <div class="sidebar">
+            <ul class="cabinet-menu">
+                <li>
+                    <a href="./cabinet.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="cabinet-menu-span">Головна</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./achievements.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span class="cabinet-menu-span">Мої досягнення</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./myarticles.html">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span class="cabinet-menu-span">Мої статті</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="cabinet-menu-span">Налаштування</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="exit()" href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="cabinet-menu-span">Вийти</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
         <main class="cabinet-container">
+            <h1>Створення статті</h1>
             <form id="article-form">
                 <input id="title-input" type="text" placeholder="Заголовок статті" />
                 <div id="editor"></div>
-                <input type="submit" value="Опублікувати" />
+                <button type="submit">Опублікувати</button>
             </form>
         </main>
     </div>

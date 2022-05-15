@@ -1,18 +1,10 @@
 #create-article-btn {
     position: absolute;
-    background-color: #0b1a9e;
     right: 30px;
     bottom: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
     font-size: 40px;
-    color: #dbd9d9;
-    text-decoration: none;
-    transition: opacity 0.1s linear;
+    color: rgb(58, 58, 221);
+    transition: opacity 0.3s ease;
 }
 
 #create-article-btn:hover {
