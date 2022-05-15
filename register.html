@@ -66,17 +66,21 @@
             </p>
             <form action="#" method="POST" class="register-container">
                 <div id="reg-errors"></div>
+
+                <label id="avatar" for="reg-avatar"><img src="./assets/images/default_user.png" /></label>
+                <input accept="image/*" type="file" hidden name="avatar" id="reg-avatar"/>
+
                 <label for="reg-name">Ім'я</label>
-                <input type="text" placeholder="Введіть ім'я" name="reg-name" id="reg-name" class="register-input" required>
+                <input type="text" placeholder="Введіть ім'я" name="name" id="reg-name" class="register-input" required>
 
                 <label for="reg-last-name">Прізвище</label>
-                <input type="text" placeholder="Введіть прізвище" name="reg-last-name" id="reg-last-name" class="register-input" required>
+                <input type="text" placeholder="Введіть прізвище" name="surname" id="reg-last-name" class="register-input" required>
 
                 <label for="reg-email">Адреса електронної пошти</label>
-                <input type="email" placeholder="Введіть адресу електронної пошти" name="reg-email" id="reg-email" class="register-input" required>
+                <input type="email" placeholder="Введіть адресу електронної пошти" name="email" id="reg-email" class="register-input" required>
 
                 <label for="reg-password">Пароль</label>
-                <input type="password" placeholder="Введіть пароль" name="reg-password" id="reg-password" class="register-input" required>
+                <input type="password" placeholder="Введіть пароль" name="password" id="reg-password" class="register-input" required>
 
                 <button type="submit" class="submit-btn">Зареєструватися</button>
             </form>

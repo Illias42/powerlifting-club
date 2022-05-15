@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/login.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
     <script src="./scripts/login.js" defer></script>
+    <script src="./scripts/cabinet.js" defer></script>
     <script src="./scripts/quotes.js" defer></script>
 </head>
 <body>
@@ -74,7 +75,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./myarticles.html">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span class="cabinet-menu-span">Мої статті</span>
                     </a>
@@ -86,7 +87,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a onclick="exit()" href="#">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="cabinet-menu-span">Вийти</span>
                     </a>
@@ -101,7 +102,7 @@
                 <span class="user-welcome" id="current-user">Володимире</span>!
             </p>
             <div class="avatar">
-                <img src="./assets/images/user.jpg" alt="Фото профілю" class="user-img">
+                <img src="./assets/images/default_user.png" alt="Фото профілю" class="user-img">
             </div>
 
             <div class="quote-container">
@@ -138,5 +139,11 @@
     <footer class="footer">
         <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
     </footer>
+    <script>
+        function exit() {
+            localStorage.removeItem("Token");
+            window.location.replace('./index.html');
+        }
+    </script>
 </body>
 </html>

@@ -1,25 +1,24 @@
 if (localStorage.getItem("Token")) {
-    window.location.replace(window.location.pathname.replace('register.html', 'cabinet.html'));
+    window.location.replace('./index.html');
 }
 
 
 const registerForm = document.querySelector('.register-container');
+const avatarInput = document.querySelector('#reg-avatar');
+const avatar = document.querySelector('#avatar>img');
+
 registerForm.addEventListener('submit', registerSubmit);
+avatarInput.addEventListener('change', changeAvatar);
 
 async function registerSubmit(e) {
     e.preventDefault();
 
-    const name = e.target[0].value;
-    const surname = e.target[1].value;
-    const email = e.target[2].value;
-    const password = e.target[3].value;
-    const formData = {name, surname, email, password};
+    const formData = new FormData(registerForm); 
 
     const response = await fetch('https://odbproject.herokuapp.com/api/users/register', {
         method: "POST",
-        body: JSON.stringify(formData),
+        body: formData,
         headers: {
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
     });
@@ -28,7 +27,7 @@ async function registerSubmit(e) {
         const data = await response.json();
         localStorage.setItem("Token", `Bearer ${data.token}`);
         console.log(window.location.pathname);
-        window.location.replace(window.location.pathname.replace('register.html', 'cabinet.html'));
+        window.location.replace('./index.html');
     } else if (response.status === 409) {
         const message = "Дана електронна адреса вже використовується.";
         const errBlock = document.getElementById('reg-errors');
@@ -42,4 +41,8 @@ async function registerSubmit(e) {
     } else {
         console.log(await response.text());
     }
+}
+
+async function changeAvatar(e) {
+    avatar.src = URL.createObjectURL(e.target.files[0]);
 }

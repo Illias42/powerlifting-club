@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powerlifting Club | Мої досягнення/title>
+    <title>Powerlifting Club</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="./styles/cabinet.css">
     <link rel="stylesheet" href="./styles/achievements.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/article.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    
     <script src="./scripts/login.js" defer></script>
+    <script src="./scripts/article.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -59,43 +62,8 @@
     </header>
 
     <div class="main-content">
-        <div class="sidebar">
-            <ul class="cabinet-menu">
-                <li>
-                    <a href="./cabinet.html">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="cabinet-menu-span">Головна</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./achievements.html">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span class="cabinet-menu-span">Мої досягнення</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./myarticles.html">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span class="cabinet-menu-span">Мої статті</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="cabinet-menu-span">Налаштування</span>
-                    </a>
-                </li>
-                <li>
-                    <a onclick="exit()" href="#">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span class="cabinet-menu-span">Вийти</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        
-        <main class="cabinet-container">
-            <h1>Мої досягнення</h1>
+        <main class="article-container">
+            
         </main>
     </div>
 
@@ -127,11 +95,5 @@
     <footer class="footer">
         <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
     </footer>
-    <script>
-        function exit() {
-            localStorage.removeItem("Token");
-            window.location.replace('./index.html');
-        }
-    </script>
 </body>
 </html>
