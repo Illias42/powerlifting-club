@@ -90,7 +90,7 @@ h1 {
 .quote-container {
     text-align: center;
     font-family: 'Bad Script', cursive;
-    margin: 150px auto 0 auto;
+    margin: 150px auto 50px auto;
     max-width: 50%;
     font-size: 1.45em;
     font-weight: 400;
@@ -112,5 +112,10 @@ h1 {
 
     .cabinet-container {
         padding: 35px 20px 0 20px;
+    }
+
+    .quote-container {
+        max-width: 100%;
+        font-size: 1.25em;
     }
 }
