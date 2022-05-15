@@ -9,13 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/cabinet.css">
+    <link rel="stylesheet" href="./styles/achievements.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/createarticle.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-image-drop-module@1.0.3/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-video-resize-module@1.0.2/video-resize.min.js"></script>
+    
     <script src="./scripts/login.js" defer></script>
-    <script src="./scripts/cabinet.js" defer></script>
-    <script src="./scripts/quotes.js" defer></script>
+    <script src="./scripts/createarticle.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -60,54 +68,12 @@
     </header>
 
     <div class="main-content">
-        <div class="sidebar">
-            <ul class="cabinet-menu">
-                <li>
-                    <a href="./cabinet.html">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="cabinet-menu-span">Головна</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./achievements.html">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span class="cabinet-menu-span">Мої досягнення</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./myarticles.html">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span class="cabinet-menu-span">Мої статті</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="cabinet-menu-span">Налаштування</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="exit-btn" href="#">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span class="cabinet-menu-span">Вийти</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        
         <main class="cabinet-container">
-            <h1>Мій кабінет</h1>
-            <p class="welcome">
-                Добрий день, 
-                <span class="user-welcome" id="current-user">Володимире</span>!
-            </p>
-            <div class="avatar">
-                <img src="./assets/images/default_user.png" alt="Фото профілю" class="user-img">
-            </div>
-
-            <div class="quote-container">
-                <span id="quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maxime, maiores nesciunt facere aut cum vel tempora delectus, saepe nihil incidunt tempore ad voluptates accusantium. Qui earum quod minima dolorem.</span>
-            </div>
+            <form id="article-form">
+                <input id="title-input" type="text" placeholder="Заголовок статті" />
+                <div id="editor"></div>
+                <input type="submit" value="Опублікувати" />
+            </form>
         </main>
     </div>
 

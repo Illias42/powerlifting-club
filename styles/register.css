@@ -26,6 +26,8 @@ h1 {
 }
 
 .register-container {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 50px auto 0;
 }
@@ -57,4 +59,29 @@ h1 {
     border-radius: 5px;
     background-color: rgba(177, 1, 1, 0.2);
     display: none;
+}
+
+#avatar {
+    align-self: center;
+    background: #000;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+#avatar>img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    transition: opacity 0.1s linear;
+}
+
+#avatar>img:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+#avatar>img:active {
+    opacity: 0.8;
 }

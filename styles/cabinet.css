@@ -70,7 +70,7 @@ h1 {
     text-align: center;
     font-weight: 500;
     font-size: 1.6em;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .avatar {
@@ -80,8 +80,10 @@ h1 {
 }
 
 .user-img {
-    max-width: 100%;
-    height: auto;
+    /* max-width: 100%;
+    height: auto; */
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
     clip-path: circle();
@@ -90,7 +92,7 @@ h1 {
 .quote-container {
     text-align: center;
     font-family: 'Bad Script', cursive;
-    margin: 150px auto 0 auto;
+    margin: 100px auto 0 auto;
     max-width: 50%;
     font-size: 1.45em;
     font-weight: 400;
