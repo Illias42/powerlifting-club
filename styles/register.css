@@ -50,8 +50,6 @@ h1 {
     border-color: rgb(150, 150, 150);
 }
 
-
-
 #reg-errors {
     padding: 10px;
     margin-bottom: 10px;
@@ -62,8 +60,8 @@ h1 {
 }
 
 #avatar {
+    margin-bottom: 30px;
     align-self: center;
-    background: #000;
     width: 150px;
     height: 150px;
     border-radius: 100%;
