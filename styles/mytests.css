@@ -1,0 +1,52 @@
+#create-test-btn {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: 40px;
+    color: rgb(58, 58, 221);
+    transition: opacity 0.3s ease;
+}
+
+#create-test-btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+#create-test-btn:active {
+    opacity: 0.85;
+}
+
+.cabinet-container > h1 {
+    margin-bottom: 20px;
+}
+
+.tests-list {
+    max-height: 77vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tests-list::-webkit-scrollbar {
+    display: none;
+}
+
+.test {
+    background-color: #ededed;
+    width: 90%;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    text-decoration: none;
+    color: #262626;
+}
+
+.test:hover {
+    cursor: pointer;
+}
+
+.test-title {
+    font-size: 25px;
+    font-weight: 600;
+}

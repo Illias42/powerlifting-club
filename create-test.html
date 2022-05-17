@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powerlifting Club | Мої статті</title>
+    <title>Powerlifting Club | Створення тестів</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/cabinet.css">
-    <link rel="stylesheet" href="./styles/achievements.css">
+    <link rel="stylesheet" href="./styles/create-tests.css">
     <link rel="stylesheet" href="./styles/login.css">
-    <link rel="stylesheet" href="./styles/myarticles.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    <script src="./scripts/create-test.js" defer></script>
     <script src="./scripts/login.js" defer></script>
-    <script src="./scripts/myarticles.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -103,12 +102,44 @@
         </div>
         
         <main class="cabinet-container">
-            <h1>Мої статті</h1>
-            <div class="articles-list"></div>
+            <h1>Створення тесту</h1>
+
+            <form action="#" id="test-form">
+                <div class="test-info">
+                    <label for="test-name">Назва тесту</label>
+                    <input type="text" name="test-name" id="test-name" class="test-input" placeholder="Як називається тест?" required>
+                </div>
+
+                <h2>Додавання запитань</h2>
+
+                <div class="create-questions-container">
+                    <p class="error hidden">Помилка! Заповніть всі поля.</p>
+                    <p class="error error-same-answers hidden">Помилка! Однакові варіанти відповідей.</p>
+                    <label for="question-name">Запитання №<span id="question-number">1</span></label>
+                    <input id="question-name" name="question-name" type="text" class="test-input" placeholder="Введіть запитання">
+
+                    <h2>Варіанти відповідей</h2>
+
+                    <label for="correct-answer">Правильна відповідь</label>
+                    <input id="correct-answer" name="correct-answer" type="text" class="test-input answer" placeholder="Правильна відповідь">
+
+                    <label for="first-wrong">Неправильна відповідь</label>
+                    <input id="fisrt-wrong" name="fisrt-wrong" type="text" class="test-input answer" placeholder="Неправильна відповідь">
+
+                    <label for="second-wrong">Неправильна відповідь</label>
+                    <input id="second-wrong" name="second-wrong" type="text" class="test-input answer" placeholder="Неправильна відповідь">
+
+                    <label for="third-wrong">Неправильна відповідь</label>
+                    <input id="third-wrong" name="third-wrong" type="text" class="test-input answer" placeholder="Неправильна відповідь">
+
+                    <button type="button" id="add-question-btn">Додати запитання</button>
+
+                    <p id="questions-added">Наразі у ваш тест додано 0 запитань.</p>
+                </div>
+
+                <button type="submit" id="create-test-btn">Створити тест</button>
+            </form>
         </main>
-        <a href="./createarticle.html" id="create-article-btn" title="Створити статтю">
-            <i class="fa-solid fa-circle-plus"></i>
-        </a>
     </div>
 
     <div class="login-modal">
