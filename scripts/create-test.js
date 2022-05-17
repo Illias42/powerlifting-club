@@ -27,7 +27,7 @@ const handlers = {
     addQuestion() {
       const question = document.getElementById('question-name');
       const correct = document.getElementById('correct-answer');
-      const wrongOne = document.getElementById('fisrt-wrong');
+      const wrongOne = document.getElementById('first-wrong');
       const wrongTwo = document.getElementById('second-wrong');
       const wrongThree = document.getElementById('third-wrong');
 
