@@ -17,6 +17,7 @@
     <script src="./scripts/bmi.js" defer></script>
     <script src="./scripts/calories.js" defer></script>
     <script src="./scripts/ipf.js" defer></script>
+    <script src="./scripts/fat.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -152,6 +153,37 @@
                                 Отже, ваша вага <span id="bmi-status"></span>
                             </p>
                             <p class="bmi-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="calc-container">
+                    <h2 class="calc-title">Кількість жиру в організмі</h2>
+                    <form class="calc">
+                        <label for="fat-gender">Стать</label>
+                        <fieldset id="fat-gender">
+                            <input type="radio" value="male" name="fat-gender" checked>  Чоловік
+                            <br>
+                            <input type="radio" value="female" name="fat-gender">  Жінка
+                        </fieldset>
+
+                        <label for="fat-height">Зріст [см]</label>
+                        <input type="number" placeholder="Введіть ваш зріст" name="fat-height" id="fat-height" class="calc-input" min="40" max="300" required>
+                        <label for="fat-weight">Вага [кг]</label>
+                        <input type="number" placeholder="Введіть вашу вагу" name="fat-weight" id="fat-weight" class="calc-input" min="2" max="700" required>
+
+                        <label for="fat-age">Вік [в роках]</label>
+                        <input type="number" placeholder="Введіть ваш вік" name="fat-age" id="fat-age" class="calc-input" min="1" max="200" required>
+
+                        <button type="button" class="submit-btn calc-btn fat-btn">Обчислити</button>
+
+                        <div class="fat-result hidden">
+                            <p class="fat-message">Кількість жиру в організмі: 
+                                <span id="fat"></span>
+                                <br>
+                                Отже, ваша категорія: <span id="fat-status"></span>
+                            </p>
+                            <p class="fat-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
                         </div>
                     </form>
                 </div>

@@ -71,7 +71,8 @@ h1 {
 
 .cal-result,
 .ipf-result,
-.bmi-result {
+.bmi-result,
+.fat-result {
     padding: 7px 0;
     font-size: 1.1em;
 }
@@ -80,7 +81,9 @@ h1 {
 #bmi,
 #bmi-status,
 #calories,
-#display-glp {
+#display-glp,
+#fat,
+#fat-status {
     font-weight: 500;
     font-size: 1.1em;
 }
@@ -97,7 +100,8 @@ fieldset {
 
 .bmi-err,
 .cal-err,
-.ipf-err {
+.ipf-err,
+.fat-err {
     color: tomato;
     font-weight: 500;
     font-size: 1.1em;
