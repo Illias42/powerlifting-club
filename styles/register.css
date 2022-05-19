@@ -50,6 +50,13 @@ h1 {
     border-color: rgb(150, 150, 150);
 }
 
+.toggle-reg-password {
+    align-self: flex-end;
+    margin-right: 10px;
+    position: relative;
+    bottom: 53px;
+}
+
 #reg-errors {
     padding: 10px;
     margin-bottom: 10px;

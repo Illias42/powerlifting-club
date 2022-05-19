@@ -36,7 +36,16 @@ function escapeClose(event) {
     }
 }
 
+const togglePassword = document.querySelector('.toggle-password');
+const password = document.querySelector('#log-password');
 
+togglePassword.addEventListener('click', () => {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+
+    password.setAttribute('type', type);
+    
+    togglePassword.classList.toggle('bi-eye');
+});
 
 const loginForm = document.querySelector('.login-modal>.modal-content');
 loginForm.addEventListener('submit', loginSubmit);

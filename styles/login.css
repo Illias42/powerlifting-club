@@ -5,6 +5,13 @@
     cursor: pointer;
 }
 
+.bi-eye-slash,
+.bi-eye {
+    margin-left: -30px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
 .login-modal {
     display: none;
     position: fixed;

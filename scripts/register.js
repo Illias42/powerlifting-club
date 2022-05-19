@@ -1,7 +1,18 @@
+const toggleRegPassword = document.querySelector('.toggle-reg-password');
+const regPassword = document.querySelector('#reg-password');
+
+toggleRegPassword.addEventListener('click', () => {
+    const type = regPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+
+    regPassword.setAttribute('type', type);
+    
+    toggleRegPassword.classList.toggle('bi-eye');
+});
+
+
 if (localStorage.getItem("Token")) {
     window.location.replace('./index.html');
 }
-
 
 const registerForm = document.querySelector('.register-container');
 const avatarInput = document.querySelector('#reg-avatar');
