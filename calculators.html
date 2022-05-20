@@ -78,9 +78,11 @@
                         <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" min="1" max="200" required>
                         <label for="cal-gender">Стать</label>
                         <fieldset id="cal-gender">
-                            <input type="radio" value="male" name="cal-gender" checked>  Чоловік
+                            <input type="radio" value="male" name="cal-gender" id="cal-male" checked>  
+                            <label for="cal-male">Чоловік</label>
                             <br>
-                            <input type="radio" value="female" name="cal-gender">  Жінка
+                            <input type="radio" value="female" name="cal-gender" id="cal-female">
+                            <label for="cal-female">Жінка</label>
                         </fieldset>
                         <label for="cal-activity">Фізична активність</label>
                         <select name="cal-activity" id="cal-activity" class="calc-input">
@@ -111,21 +113,27 @@
                         <input type="number" id="ipf-bodyweight" name="ipf-bodyweight" placeholder="Введіть вашу вагу" class="calc-input" min="0" step="0.1">
 
                         <fieldset>
-                            <input type="radio" id="men" name="sex" value="M" checked> Чоловіки
+                            <input type="radio" id="men" name="sex" value="M" checked>
+                            <label for="men">Чоловіки</label>
                             <br>
-                            <input type="radio" id="women" name="sex" value="F"> Жінки
+                            <input type="radio" id="women" name="sex" value="F">
+                            <label for="women">Жінки</label>
                         </fieldset>
 
                         <fieldset>
-                            <input type="radio" id="raw" name="equipment" value="Raw" checked> Класичний
+                            <input type="radio" id="raw" name="equipment" value="Raw" checked>
+                            <label for="raw">Класичний</label>
                             <br>
-                            <input type="radio" id="single" name="equipment" value="Single-ply"> Екіпірувальний
+                            <input type="radio" id="single" name="equipment" value="Single-ply">
+                            <label for="single">Екіпірувальний</label>
                         </fieldset>
 
                         <fieldset>
-                            <input type="radio" id="sbd" name="event" value="SBD" checked> Триборство
+                            <input type="radio" id="sbd" name="event" value="SBD" checked>
+                            <label for="sbd">Триборство</label>
                             <br>
-                            <input type="radio" id="b" name="event" value="B"> Жим лежачи
+                            <input type="radio" id="b" name="event" value="B">
+                            <label for="b">Жим лежачи</label>
                         </fieldset>
 
                         <button type="button" class="submit-btn calc-btn ipf-btn">Обчислити</button>
@@ -163,9 +171,11 @@
                     <form class="calc">
                         <label for="fat-gender">Стать</label>
                         <fieldset id="fat-gender">
-                            <input type="radio" value="male" name="fat-gender" checked>  Чоловік
+                            <input type="radio" value="male" name="fat-gender" id="fat-male" checked>
+                            <label for="fat-male">Чоловік</label>
                             <br>
-                            <input type="radio" value="female" name="fat-gender">  Жінка
+                            <input type="radio" value="female" id="fat-female" name="fat-gender">
+                            <label for="fat-female">Жінка</label>
                         </fieldset>
 
                         <label for="fat-height">Зріст [см]</label>
