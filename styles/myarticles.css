@@ -1,9 +1,16 @@
+body {
+    background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
+    color: black;
+}
+
 #create-article-btn {
     position: absolute;
     right: 30px;
     bottom: 30px;
     font-size: 40px;
-    color: rgb(58, 58, 221);
+    color: rgb(80, 80, 230);
     transition: opacity 0.3s ease;
 }
 

@@ -1,5 +1,7 @@
 body {
     background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
     color: black;
 }
 
@@ -80,7 +82,7 @@ textarea:focus {
 .contact-data i {
     font-size: 2em;
     margin-bottom: 20px;
-    color: rgb(92, 162, 185)
+    color: rgb(80, 80, 230);
 }
 
 .contact-data h3 {

@@ -23,7 +23,7 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <a href="./index.html" class="logo">Powerlifting Club</a>
+            <a href="./index.html" class="logo"><img src="./assets/images/logo.png" alt="Logo" width="206" height="27"></a>
             <div class="menu-container">
                 <nav class="mobile-menu">
                     <input id="menu-toggle" type="checkbox">
@@ -70,133 +70,139 @@
                 <div class="calc-container">
                     <h2 class="calc-title">Калькулятор калорій</h2>
                     <form class="calc">
-                        <label for="cal-height">Зріст [см]</label>
-                        <input type="number" placeholder="Введіть ваш зріст" name="cal-height" id="cal-height" class="calc-input" min="40" max="300" required>
-                        <label for="cal-weight">Вага [кг]</label>
-                        <input type="number" placeholder="Введіть вашу вагу" name="cal-weight" id="cal-weight" class="calc-input" min="2" max="700" required>
-                        <label for="cal-age">Вік [в роках]</label>
-                        <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" min="1" max="200" required>
-                        <label for="cal-gender">Стать</label>
-                        <fieldset id="cal-gender">
-                            <input type="radio" value="male" name="cal-gender" id="cal-male" checked>  
-                            <label for="cal-male">Чоловік</label>
-                            <br>
-                            <input type="radio" value="female" name="cal-gender" id="cal-female">
-                            <label for="cal-female">Жінка</label>
+                        <fieldset>
+                            <label for="cal-height">Зріст [см]</label>
+                            <input type="number" placeholder="Введіть ваш зріст" name="cal-height" id="cal-height" class="calc-input" min="40" max="300" required>
+                            <label for="cal-weight">Вага [кг]</label>
+                            <input type="number" placeholder="Введіть вашу вагу" name="cal-weight" id="cal-weight" class="calc-input" min="2" max="700" required>
+                            <label for="cal-age">Вік [в роках]</label>
+                            <input type="number" placeholder="Введіть ваш вік" name="cal-age" id="cal-age" class="calc-input" min="1" max="200" required>
+                            <label for="cal-gender">Стать</label>
+                            <fieldset id="cal-gender">
+                                <input type="radio" value="male" name="cal-gender" id="cal-male" checked>  
+                                <label for="cal-male">Чоловік</label>
+                                <br>
+                                <input type="radio" value="female" name="cal-gender" id="cal-female">
+                                <label for="cal-female">Жінка</label>
+                            </fieldset>
+                            <label for="cal-activity">Фізична активність</label>
+                            <select name="cal-activity" id="cal-activity" class="calc-input">
+                                <option value="1.2">Немає фізичної активності</option>
+                                <option value="1.375">Спорт 1-3 рази на тиждень</option>
+                                <option value="1.55">Спорт 3-5 разів на тиждень</option>
+                                <option value="1.725">Спорт кожен день</option>
+                                <option value="1.9">Дуже висока фізична активність</option>
+                            </select>
                         </fieldset>
-                        <label for="cal-activity">Фізична активність</label>
-                        <select name="cal-activity" id="cal-activity" class="calc-input">
-                            <option value="1.2">Немає фізичної активності</option>
-                            <option value="1.375">Спорт 1-3 рази на тиждень</option>
-                            <option value="1.55">Спорт 3-5 разів на тиждень</option>
-                            <option value="1.725">Спорт кожен день</option>
-                            <option value="1.9">Дуже висока фізична активність</option>
-                        </select>
                         <button type="button" class="submit-btn calc-btn cal-btn">Обчислити</button>
-                        <div class="cal-result hidden">
-                            <p class="cal-message">Ваша добова норма калорій: 
-                                <span id="calories"></span>
-                            </p>
-                            <p class="cal-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
-                        </div>
                     </form>
+                    <div class="cal-result hidden">
+                        <p class="cal-message">Ваша добова норма калорій: 
+                            <span id="calories"></span>
+                        </p>
+                        <p class="cal-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
+                    </div>
                 </div>
 
                 <div class="calc-container">
                     <h2 class="calc-title">Калькулятор IPF GL POINTS</h2>
                     <form class="calc">
-
-                        <label for="ipf-total">Результат</label>
-                        <input type="number" id="ipf-total" name="ipf-total" placeholder="Введіть ваш результат" class="calc-input" min="0" step="2.5">
-                  
-                        <label for="ipf-bodyweight">Власна вага [кг]</label>
-                        <input type="number" id="ipf-bodyweight" name="ipf-bodyweight" placeholder="Введіть вашу вагу" class="calc-input" min="0" step="0.1">
-
                         <fieldset>
-                            <input type="radio" id="men" name="sex" value="M" checked>
-                            <label for="men">Чоловіки</label>
-                            <br>
-                            <input type="radio" id="women" name="sex" value="F">
-                            <label for="women">Жінки</label>
-                        </fieldset>
+                            <label for="ipf-total">Результат</label>
+                            <input type="number" id="ipf-total" name="ipf-total" placeholder="Введіть ваш результат" class="calc-input" min="0" step="2.5">
+                    
+                            <label for="ipf-bodyweight">Власна вага [кг]</label>
+                            <input type="number" id="ipf-bodyweight" name="ipf-bodyweight" placeholder="Введіть вашу вагу" class="calc-input" min="0" step="0.1">
 
-                        <fieldset>
-                            <input type="radio" id="raw" name="equipment" value="Raw" checked>
-                            <label for="raw">Класичний</label>
-                            <br>
-                            <input type="radio" id="single" name="equipment" value="Single-ply">
-                            <label for="single">Екіпірувальний</label>
-                        </fieldset>
+                            <fieldset>
+                                <input type="radio" id="men" name="sex" value="M" checked>
+                                <label for="men">Чоловіки</label>
+                                <br>
+                                <input type="radio" id="women" name="sex" value="F">
+                                <label for="women">Жінки</label>
+                            </fieldset>
 
-                        <fieldset>
-                            <input type="radio" id="sbd" name="event" value="SBD" checked>
-                            <label for="sbd">Триборство</label>
-                            <br>
-                            <input type="radio" id="b" name="event" value="B">
-                            <label for="b">Жим лежачи</label>
+                            <fieldset>
+                                <input type="radio" id="raw" name="equipment" value="Raw" checked>
+                                <label for="raw">Класичний</label>
+                                <br>
+                                <input type="radio" id="single" name="equipment" value="Single-ply">
+                                <label for="single">Екіпірувальний</label>
+                            </fieldset>
+
+                            <fieldset>
+                                <input type="radio" id="sbd" name="event" value="SBD" checked>
+                                <label for="sbd">Триборство</label>
+                                <br>
+                                <input type="radio" id="b" name="event" value="B">
+                                <label for="b">Жим лежачи</label>
+                            </fieldset>
                         </fieldset>
 
                         <button type="button" class="submit-btn calc-btn ipf-btn">Обчислити</button>
-                        <div class="ipf-result hidden">
-                            <p class="ipf-message">
-                                Ваш бал IPF GL:
-                                <span id="display-glp"></span>
-                            </p>
-                            <p class="ipf-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
-                        </div>
                     </form>
+                    <div class="ipf-result hidden">
+                        <p class="ipf-message">
+                            Ваш бал IPF GL:
+                            <span id="display-glp"></span>
+                        </p>
+                        <p class="ipf-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
+                    </div>
                 </div>
 
                 <div class="calc-container">
                     <h2 class="calc-title">Індекс маси тіла</h2>
                     <form class="calc">
-                        <label for="bmi-height">Зріст [см]</label>
-                        <input type="number" placeholder="Введіть ваш зріст" name="bmi-height" id="bmi-height" class="calc-input" min="40" max="300" required>
-                        <label for="bmi-weight">Вага [кг]</label>
-                        <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" min="2" max="700" required>
+                        <fieldset>
+                            <label for="bmi-height">Зріст [см]</label>
+                            <input type="number" placeholder="Введіть ваш зріст" name="bmi-height" id="bmi-height" class="calc-input" min="40" max="300" required>
+                            <label for="bmi-weight">Вага [кг]</label>
+                            <input type="number" placeholder="Введіть вашу вагу" name="bmi-weight" id="bmi-weight" class="calc-input" min="2" max="700" required>
+                        </fieldset>
                         <button type="button" class="submit-btn calc-btn bmi-btn">Обчислити</button>
-                        <div class="bmi-result hidden">
-                            <p class="bmi-message">Ваш індекс маси тіла: 
-                                <span id="bmi"></span>
-                                <br>
-                                Отже, ваша вага <span id="bmi-status"></span>
-                            </p>
-                            <p class="bmi-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
-                        </div>
                     </form>
+                    <div class="bmi-result hidden">
+                        <p class="bmi-message">Ваш індекс маси тіла: 
+                            <span id="bmi"></span>
+                            <br>
+                            Отже, ваша вага <span id="bmi-status"></span>
+                        </p>
+                        <p class="bmi-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
+                    </div>
                 </div>
 
                 <div class="calc-container">
                     <h2 class="calc-title">Кількість жиру в організмі</h2>
                     <form class="calc">
-                        <label for="fat-gender">Стать</label>
-                        <fieldset id="fat-gender">
-                            <input type="radio" value="male" name="fat-gender" id="fat-male" checked>
-                            <label for="fat-male">Чоловік</label>
-                            <br>
-                            <input type="radio" value="female" id="fat-female" name="fat-gender">
-                            <label for="fat-female">Жінка</label>
+                        <fieldset>
+                            <label for="fat-gender">Стать</label>
+                            <fieldset id="fat-gender">
+                                <input type="radio" value="male" name="fat-gender" id="fat-male" checked>
+                                <label for="fat-male">Чоловік</label>
+                                <br>
+                                <input type="radio" value="female" id="fat-female" name="fat-gender">
+                                <label for="fat-female">Жінка</label>
+                            </fieldset>
+
+                            <label for="fat-height">Зріст [см]</label>
+                            <input type="number" placeholder="Введіть ваш зріст" name="fat-height" id="fat-height" class="calc-input" min="40" max="300" required>
+                            <label for="fat-weight">Вага [кг]</label>
+                            <input type="number" placeholder="Введіть вашу вагу" name="fat-weight" id="fat-weight" class="calc-input" min="2" max="700" required>
+
+                            <label for="fat-age">Вік [в роках]</label>
+                            <input type="number" placeholder="Введіть ваш вік" name="fat-age" id="fat-age" class="calc-input" min="1" max="200" required>
                         </fieldset>
 
-                        <label for="fat-height">Зріст [см]</label>
-                        <input type="number" placeholder="Введіть ваш зріст" name="fat-height" id="fat-height" class="calc-input" min="40" max="300" required>
-                        <label for="fat-weight">Вага [кг]</label>
-                        <input type="number" placeholder="Введіть вашу вагу" name="fat-weight" id="fat-weight" class="calc-input" min="2" max="700" required>
-
-                        <label for="fat-age">Вік [в роках]</label>
-                        <input type="number" placeholder="Введіть ваш вік" name="fat-age" id="fat-age" class="calc-input" min="1" max="200" required>
-
                         <button type="button" class="submit-btn calc-btn fat-btn">Обчислити</button>
-
-                        <div class="fat-result hidden">
-                            <p class="fat-message">Кількість жиру в організмі: 
-                                <span id="fat"></span>
-                                <br>
-                                Отже, ваша категорія: <span id="fat-status"></span>
-                            </p>
-                            <p class="fat-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
-                        </div>
                     </form>
+                    <div class="fat-result hidden">
+                        <p class="fat-message">Кількість жиру в організмі: 
+                            <span id="fat"></span>
+                            <br>
+                            Отже, ваша категорія: <span id="fat-status"></span>
+                        </p>
+                        <p class="fat-err hidden">Помилка! Ви не правильно вказали свої дані.</p>
+                    </div>
                 </div>
             </div>
         </div>
