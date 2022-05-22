@@ -9,4 +9,4 @@ const username = document.querySelector('#current-user');
 const avatar = document.querySelector('.avatar img');
 
 username.innerHTML = `${user.name}`;
-avatar.src = `https://odbproject.herokuapp.com/api/users/${user.id}/avatar`;
+avatar.src = user.avatar;

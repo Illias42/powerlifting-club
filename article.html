@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/login.css">
     <link rel="stylesheet" href="./styles/article.css">
     <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
     <script src="./scripts/login.js" defer></script>
     <script src="./scripts/article.js" defer></script>
 </head>
@@ -37,7 +38,7 @@
                         <li><a href="./standards.html">Нормативи</a></li>
                         <li><a href="#">Рекорди</a></li>
                         <li><a href="./calculators.html">Калькулятори</a></li>
-                        <li><a href="#">Блог</a></li>
+                        <li><a href="./blog.html">Блог</a></li>
                         <li><a href="./contact.html">Контакти</a></li>
                     </ul>
                 </nav>
@@ -48,7 +49,7 @@
                         <li><a href="./standards.html">Нормативи</a></li>
                         <li><a href="#">Рекорди</a></li>
                         <li><a href="./calculators.html">Калькулятори</a></li>
-                        <li><a href="#">Блог</a></li>
+                        <li><a href="./blog.html">Блог</a></li>
                         <li><a href="./contact.html">Контакти</a></li>
                         <li>
                             <button type="button" class="login-btn" title="Log in">
@@ -62,7 +63,16 @@
     </header>
 
     <div class="main-content">
-        <main class="article-container"></main>
+        <div class="article-container"></div>
+        <div class="comment-area">
+            <img src="./assets/images/default_user.png" />
+            <div>
+                <textarea></textarea>
+                <div class="button">Опублікувати</div>
+            </div>
+        </div>
+        <div class="comments-container">
+        </div>
     </div>
 
     <div class="login-modal">

@@ -16,8 +16,9 @@ document.addEventListener('keyup', escapeClose);
 function openModal() {
     if (localStorage.getItem("Token")) {
         window.location.replace('./cabinet.html');
+    } else {
+        modal.style.display = 'block';
     }
-    modal.style.display = 'block';
 }
 
 function closeModal() {

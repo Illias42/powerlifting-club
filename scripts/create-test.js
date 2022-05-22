@@ -68,7 +68,8 @@ const addQuestionBtn = document.getElementById('add-question-btn');
 addQuestionBtn.addEventListener('click', handlers.addQuestion);
 
 const testForm = document.getElementById('test-form');
-testForm.addEventListener('submit', () => {
+testForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     const testName = document.getElementById('test-name').value;
 
     // Цей об'єкт обробити і зберегти в базі даних
@@ -76,4 +77,12 @@ testForm.addEventListener('submit', () => {
         name: testName,
         questions: quiz.questions
     };
+
+    const res = await fetch("https://odbproject.herokuapp.com/api/quiz", {
+        method: "POST",
+        body: JSON.stringify(test),
+        headers: {
+            Authorization: localStorage.getItem("Token"),
+        }
+    });
 });

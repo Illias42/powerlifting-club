@@ -1,11 +1,24 @@
-console.log(window.location.href)
+const token = localStorage.getItem("Token");
+const user = JSON.parse(atob(token.split('.')[1]));
+
 const url = new URL(window.location.href);
 const wrapper = document.querySelector(".article-container");
+const avatar = document.querySelector(".comment-area img");
+const commentInput = document.querySelector(".comment-area textarea");
+const commentButton = document.querySelector(".comment-area .button");
+const commentsContainer = document.querySelector(".comments-container");
 
-console.log(url.searchParams.get("id"))
+avatar.src = user.avatar;
+commentButton.addEventListener('click', sendComment);
 
-async function getArticle() {
-  const response = await fetch(`https://odbproject.herokuapp.com/api/articles/${url.searchParams.get("id")}`, {
+const socket = io("https://odbproject.herokuapp.com/");
+socket.on("connect", () => console.log(`Connected. Id: ${socket.id}`))
+socket.emit("join-room", url.searchParams.get("id"));
+socket.on("message", (data) => addComment(data));
+
+(async function getArticle() {
+  const articleId = url.searchParams.get("id");
+  const response = await fetch(`https://odbproject.herokuapp.com/api/articles/${articleId}`, {
     method: "GET",
     headers: {
       Authorization: localStorage.getItem("Token"),
@@ -14,14 +27,13 @@ async function getArticle() {
 
   if (response.status === 200) {
     const data = await response.json();
-    
-    console.log(data);
+
     const date = new Date(data.article.createdAt);
     wrapper.innerHTML += `
       <div>
         <div id="head">
           <div id="author">
-            <img src="https://odbproject.herokuapp.com/${data.article.author.avatar}" />
+            <img src="${data.article.author.avatar}" />
             <span>${data.article.author.name} ${data.article.author.surname}<span>
           </div>
           <div>
@@ -34,7 +46,47 @@ async function getArticle() {
         </div>
       </div>
     `
+
+    data.article.comments.map(comment => addComment({
+      avatar: comment.author.avatar,
+      author: comment.author.name + " " + comment.author.surname,
+      text: comment.text,
+      createdAt: comment.createdAt
+    }))
+  } else {
+    throw new Error("Failed to get articles");
+  }
+
+})()
+.catch(err => console.log(err.message))
+
+
+async function sendComment() {
+  if (commentInput.value) {
+    const commentData = {
+      authorId: user.id,
+      articleId: url.searchParams.get("id"),
+      avatar: user.avatar,
+      author: user.name + " " + user.surname, 
+      text: commentInput.value,
+      createdAt: Date.now()
+    };
+    addComment(commentData);
+    socket.emit("comment", url.searchParams.get("id"), commentData);
+    commentInput.value = "";
   }
 }
 
-getArticle();
+
+async function addComment(data) {
+  const comment = document.createElement('div');
+  comment.className = "comment";
+  comment.innerHTML = `
+    <img src="${data.avatar}" />
+      <div>
+        <p>${data.author}</p>
+        <div class="content">${data.text}</div>
+    </div>
+  `;
+  commentsContainer.prepend(comment);
+}
