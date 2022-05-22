@@ -5,13 +5,14 @@ body {
 
 .main-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 90px;
 }
 
 .article-container {
-    min-width: 500px;
     max-width: 940px;
+    min-height: 100vh;
     width: auto;
     padding: 0 20px;
     margin-bottom: 90px;
@@ -53,4 +54,83 @@ body {
 #title {
     font-size: 40px;
     font-weight: 700;
+}
+
+.comment-area {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    max-width: 940px;
+}
+
+.comment-area > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    flex: 1;
+}
+
+.comment-area img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    clip-path: circle();
+}
+
+.comment-area textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    height: 150px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.comment-area .button {
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 5px;
+    padding: 10px;
+    width: fit-content;
+    transition: all .2s;
+}
+
+.comment-area .button:hover {
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+.comments-container {
+    width: 100%;
+    max-width: 940px;
+    padding: 20px;
+    margin-bottom: 50px; 
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.comment img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    clip-path: circle();
+}
+
+.comment > div {
+    padding: 10px;
+    margin-left: 15px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    flex: 1;
+}
+
+.comment p {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.comment .content {
+    margin: 15px 5px;
 }
