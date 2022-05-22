@@ -11,7 +11,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     background-color: rgb(25, 25, 25);
-    color: rgb(240, 240, 240);
+    color: rgb(230, 230, 230);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ body {
     position: relative;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), 
-                url(../assets/images/banner.jpg) no-repeat center center;
+                url(../assets/images/banner.png) no-repeat center center;
     background-size: cover;
     background-color: rgb(25, 25, 25);
 }
@@ -57,12 +57,13 @@ h1 {
     margin-bottom: 100px;
 }
 
-.join-us {
+.join-us,
+.learn-more {
     display: inline-block;
     text-decoration: none;
     color: rgb(250, 250, 250);
     padding: 10px 20px;
-    border: 3px solid rgb(200, 220, 15);
+    border: 3px solid #d32d3b;
     border-radius: 4px;
     text-transform: uppercase;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9),
@@ -73,8 +74,22 @@ h1 {
 
 .join-us:hover {
     animation: none;
-    box-shadow: inset 0 0 3px rgb(200, 220, 15),
-                0 0 3px rgb(200, 220, 15);
+    box-shadow: inset 0 0 3px #d32d3b,
+                0 0 3px #d32d3b;
+}
+
+.link-wrapper {
+    text-align: center;
+}
+
+.learn-more {
+    border: 2px solid #d32d3b;
+    box-shadow: none;
+    animation: none;
+}
+
+.learn-more:hover {
+    box-shadow: 0 0 3px #d32d3b;
 }
 
 @keyframes pulse {
@@ -109,14 +124,7 @@ h1 {
 
 .logo {
     cursor: pointer;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: rgb(240, 240, 240);
-    transition: color 300ms ease-out;
-}
-
-.logo:hover {
-    color: rgb(200, 220, 15);
+    margin-top: 10px;
 }
 
 .login-btn:hover {
@@ -126,7 +134,7 @@ h1 {
 
 .fa-circle-user {
     font-size: 25px;
-    color: rgb(240, 240, 240);
+    color: rgb(230, 230, 230);
 }
 
 .nav-links {
@@ -135,26 +143,7 @@ h1 {
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(240, 240, 240);
-}
-
-.link-wrapper {
-    text-align: center;
-}
-
-.learn-more {
-    display: inline-block;
-    text-decoration: none;
-    color: rgb(250, 250, 250);
-    padding: 10px 20px;
-    border: 2px solid rgb(200, 220, 15);
-    border-radius: 4px;
-    text-transform: uppercase;
-    transition: all 300ms ease;
-}
-
-.learn-more:hover {
-    border-color: orange;
+    color: rgb(230, 230, 230);
 }
 
 
@@ -163,7 +152,7 @@ h1 {
 
 .content-section {
     margin: 40px 0;
-    color: #f0f0f0;
+    color: rgb(230, 230, 230);
 }
 
 .section-title {
@@ -199,7 +188,7 @@ h1 {
 
 .item-img > i {
     font-size: 2.7em;
-    color: rgb(211, 211, 23);
+    color: #ffc400;
 }
 
 .num-stats,
@@ -216,35 +205,26 @@ h1 {
 
 .social-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 30px 0;
 }
 
 .social-icons .icon {
-    border: 2px solid #333;
-    border-radius: 15px;
-    flex-basis: 300px;
     text-align: center;
-    margin: 20px;
-    transition: border-color 300ms ease;
+    margin: 0 30px;
 }
 
 .social-icons .icon a {
-    padding: 10px;
+    padding: 5px;
     display: block;
     height: 100%;
     color: inherit;
     text-decoration: none;
 }
 
-.social-icons .icon p {
-    font-size: 16px;
-    color: rgb(223, 223, 223);
-}
-
 .social-icons .icon i {
-    margin-bottom: 15px;
     font-size: 2em;
+    transition: opacity 300ms ease-out;
 }
 
 .fa-facebook {
@@ -259,16 +239,8 @@ h1 {
     color:  #c4302b;
 }
 
-.social-icons .icon:nth-child(1):hover {
-    border-color: #3b5998;
-}
-
-.social-icons .icon:nth-child(2):hover {
-    border-color: #E1306C;
-}
-
-.social-icons .icon:nth-child(3):hover {
-    border-color: #c4302b;
+.social-icons .icon i:hover {
+    opacity: 0.9;
 }
 
 .footer {
@@ -320,7 +292,7 @@ h1 {
         margin-top: 2px;
         width: 0;
         height: 2px;
-        background: #f0f0f0;
+        background: rgb(230, 230, 230);
         transition: width 0.3s;
     }
     
@@ -371,7 +343,7 @@ h1 {
         display: flex;
         align-items: center;
         position: fixed;
-        top: 15px;
+        top: 23.5px;
         right: 15px;
         width: 25px;
         height: 25px;
@@ -440,11 +412,5 @@ h1 {
 
     .stats-item:last-child {
         margin-bottom: 0;
-    }
-
-    /* SOCIAL */
-
-    .social-icons {
-        display: block;
     }
 }

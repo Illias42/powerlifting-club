@@ -1,5 +1,7 @@
 body {
     background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
     color: black;
     min-height: 100vh;
 }

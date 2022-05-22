@@ -1,5 +1,6 @@
 body {
     background-color: inherit;
+    background: none;
     color: black;
 }
 
@@ -38,9 +39,9 @@ h1 {
 }
 
 .standards-title span {
-    color: rgb(65, 65, 240);
+    color: rgb(80, 80, 230);
 }
 
 .standards-title span.women {
-    color: #E63956;
+    color: #d32d3b;
 }

@@ -1,5 +1,7 @@
 body {
     background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
     color: black;
 }
 
@@ -32,6 +34,12 @@ h1 {
     margin: 30px;
     border: 1px solid lightgray;
     border-radius: 4px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
 }
 
 .calc-title {
@@ -61,7 +69,7 @@ h1 {
 
 .calc-btn {
     margin-top: 20px;
-    background-color: #E63946;
+    background-color: rgb(80, 80, 230);
 }
 
 input[type="radio"],

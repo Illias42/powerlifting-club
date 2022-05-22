@@ -70,6 +70,7 @@ async function loginSubmit(e) {
     if (response.status === 201) {
         const data = await response.json()
         localStorage.setItem("Token", `Bearer ${data.token}`);
+        window.location.replace('./cabinet.html');
         closeModal();
     } else {
         const message = "Не вдалось увійти. Перевірте введені дані.";
