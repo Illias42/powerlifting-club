@@ -41,9 +41,10 @@ body {
 .article {
     background-color: #ededed;
     width: 90%;
-    padding: 20px;
+    padding: 25px;
+    border: 1px solid lightgray;
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px 10px;
     display: flex;
     text-decoration: none;
     color: #262626;
@@ -51,6 +52,10 @@ body {
 
 .article:hover {
     cursor: pointer;
+}
+
+.article :nth-child(2) :first-child {
+    font-weight: 500;
 }
 
 .article img {
@@ -62,11 +67,11 @@ body {
 }
 
 .article-title {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .article-date {
     font-size: 12px;
-    color: #b3b3b3;
+    color: rgb(160, 160, 160);
 }

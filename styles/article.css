@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     width: auto;
     padding: 0 20px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
 }
 
 .article-container img {
@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #author {
@@ -42,11 +42,13 @@ body {
     margin-right: 12px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #author span {
     font-size: 20px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 #created-at {
@@ -55,7 +57,7 @@ body {
 }
 
 #title {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -77,6 +79,35 @@ body {
     line-height: 1.5;
     font-size: 18px;
     color: #202020;
+}
+
+#article-content p a {
+    color: rgb(80, 80, 230);
+}
+
+#article-content p a:link,
+#article-content p a:visited {
+    color: rgb(80, 80, 230);
+}
+
+#article-content p a:hover {
+    text-decoration: none;
+}
+
+#article-content p a:active {
+    border: 1px dashed rgb(80, 80, 230);
+}
+
+.leave-comment-title {
+    margin: 40px 0 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid rgb(230, 230, 230);
+    border-bottom: none;
 }
 
 .comment-area {
@@ -147,12 +178,13 @@ body {
     height: 50px;
     object-fit: cover;
     clip-path: circle();
+    cursor: pointer;
 }
 
 .comment > div {
     padding: 10px;
     margin-left: 15px;
-    border: 1px solid rgb(180, 180, 180);
+    border: 1px solid rgb(190, 190, 190);
     border-radius: 5px;
     flex: 1;
 }
@@ -164,4 +196,11 @@ body {
 
 .comment .content {
     margin: 15px 5px;
+}
+
+#comments-number {
+    font-size: 18px;
+    font-weight: 500;
+    color: #202020;
+    margin: 20px 0;
 }

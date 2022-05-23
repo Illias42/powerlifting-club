@@ -8,6 +8,8 @@ const commentInput = document.querySelector(".comment-area textarea");
 const commentButton = document.querySelector(".comment-area .button");
 const commentsContainer = document.querySelector(".comments-container");
 
+const commentsNumber = document.getElementById('comments-number');
+
 avatar.src = user.avatar;
 commentButton.addEventListener('click', sendComment);
 
@@ -89,4 +91,20 @@ async function addComment(data) {
     </div>
   `;
   commentsContainer.prepend(comment);
+
+  countComments();
+}
+
+function countComments() {
+  let numOfComments = document.querySelectorAll('.comment').length;
+
+  if (numOfComments === 0) {
+    commentsNumber.textContent = 'Немає коментарів';
+  } else if (numOfComments === 1) {
+    commentsNumber.textContent = numOfComments + ' коментар';
+  } else if (numOfComments >= 2 && numOfComments < 5) {
+    commentsNumber.textContent = numOfComments + ' коментарі';
+  } else {
+    commentsNumber.textContent = numOfComments + ' коментарів';
+  }
 }
