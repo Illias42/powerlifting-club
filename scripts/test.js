@@ -34,6 +34,7 @@ function startAgain() {
 
     view.correctAnswers = 0;
     view.currentQuestion = 1;
+
     document.querySelector('.counter').innerHTML = `${view.currentQuestion} / ${currentQuiz.questions.length}`;
 
     view.displayQuestions();
@@ -205,6 +206,7 @@ const view = {
     //Else change the color of element to red and find the elemtn with correct class and make it green
     for (let i = 0; i < questionDiv.length; i++) {
         questionDiv[i].onclick = function(event) {
+
         event = event || window.event;
         if(event.target.className === "correct"){
             view.correctAnswers++;

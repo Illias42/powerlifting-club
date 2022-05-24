@@ -1,0 +1,22 @@
+body {
+    background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
+    color: black;
+}
+
+.header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.main-content {
+    margin-top: 90px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 0;
+    color: black;
+    text-shadow: none;
+}
