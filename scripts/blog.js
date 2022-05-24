@@ -33,3 +33,26 @@ const content = document.querySelector(".articles-container");
   }
 })()
 .catch(err => console.log(err.message))
+
+// Search
+
+document.getElementById('search-bar').oninput = function() {
+  let val = this.value.trim().toLowerCase();
+
+  let items = document.querySelectorAll('.article-title');
+  
+  if (val !== '') {
+    items.forEach((elem) => {
+      if (elem.innerText.toLowerCase().search(val) === -1) {
+        elem.parentElement.parentElement.classList.add('hide');
+      } else {
+        elem.parentElement.parentElement.classList.remove('hide');
+      }
+    });
+
+  } else {
+    items.forEach((elem) => {
+      elem.parentElement.parentElement.classList.remove('hide');
+    });
+  }
+}
