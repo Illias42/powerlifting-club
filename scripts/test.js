@@ -1,19 +1,16 @@
 let currentQuiz = {
     movingToNextQuestion() {
-        //find all next buttons and add event lisener to them
-    var nextButton = document.querySelectorAll(".nextButton");
+    const nextButton = document.querySelectorAll(".nextButton");
     for(i = 0; i < nextButton.length; i++){
       nextButton[i].addEventListener("click", function(event){
-        //Find the element that was clicked
-        var elementClicked = event.target;
-        //If it was a next button then remove the is-active class from it parent
+        const elementClicked = event.target;
+
         if(elementClicked.className === "nextButton"){
           elementClicked.parentNode.classList.remove("is-active");
-          //If there isnt a next sibling then reshow the options to add questions and the info div
+
           if(elementClicked.parentNode.nextElementSibling === null) {
             buildResult();
           } else {
-            //If there is a next siblng then add the is-active class to it
             elementClicked.parentNode.nextElementSibling.classList.add("is-active");
           }
         }
@@ -99,7 +96,6 @@ const wrapper = document.querySelector(".test-container");
 
         const date = new Date(quiz.createdAt);
 
-        // currentQuiz = quiz;
         Object.assign(currentQuiz, quiz);
         console.log(currentQuiz);
 
@@ -131,17 +127,13 @@ const wrapper = document.querySelector(".test-container");
 // PASSING THE TEST
 
 const view = {
-    //This runs when you click start quiz
     displayQuestions: function() {
     document.querySelector('.counter').style.display = "block";
-    //Hide the options to add questions and the info
     const hideStartBtn = document.getElementById('start-btn');
     hideStartBtn.style.display = "none";
-    //Clear the quesitons wrapper
     const questionsWrapper = document.querySelector(".questions-wrapper");
     questionsWrapper.innerHTML = "";
 
-    //for each quesiton in array create elements neede and give classes
     currentQuiz.questions.forEach(function(question, index) {
         const questionDiv = document.createElement("div");
         questionDiv.setAttribute("class", "questionDiv");
@@ -158,29 +150,24 @@ const view = {
         const wrongThreeLi = document.createElement("li");
         wrongThreeLi.setAttribute("class", "wrong");
 
-        //add each question div to the question wrapper
         questionsWrapper.appendChild(questionDiv);
 
         questionsWrapper.firstChild.classList.add("is-active");
 
-        //add the text to the inputs the values in the questions array
         questionLi.textContent = question.question;
         correctLi.textContent = question.correct;
         wrongOneLi.textContent = question.wrongOne;
         wrongTwoLi.textContent = question.wrongTwo;
         wrongThreeLi.textContent = question.wrongThree;
 
-        //If its the last question the button should say finish if not it should say next
         if (index === currentQuiz.questions.length - 1){
         nextButton.textContent = "Завершити";
         } else{
         nextButton.textContent = "Наступне";
         }
 
-        //Append elements to div
         questionDiv.appendChild(questionLi);
 
-        //put the answers in a random order before apprending them so correct isnt always 1st
         const array = [correctLi, wrongOneLi, wrongTwoLi, wrongThreeLi];
         array.sort(function(a, b){return 0.5 - Math.random()});
         array.forEach(function(item){
@@ -202,8 +189,6 @@ const view = {
     displayAnswersCorrect: function() {
     const questionDiv = document.querySelectorAll(".questionDiv");
 
-    //add click event to each question div if the element clicked has class correct then add 1 to correctAnswers and change the color of element to green.
-    //Else change the color of element to red and find the elemtn with correct class and make it green
     for (let i = 0; i < questionDiv.length; i++) {
         questionDiv[i].onclick = function(event) {
 
@@ -223,8 +208,8 @@ const view = {
             }
             }
         }
-        //Remove correct and wrong classes so the same question the score cant go up and colors cant chaneg
-        var itemChildren = event.target.parentNode.children;
+
+        const itemChildren = event.target.parentNode.children;
         for(i = 0; i < itemChildren.length; i++){
             itemChildren[i].classList.remove("correct");
             itemChildren[i].classList.remove("wrong");
