@@ -13,10 +13,53 @@ body {
     margin-top: 90px;
 }
 
+.container {
+    text-align: center;
+}
+
 h1 {
     font-size: 1.8rem;
     text-align: center;
     letter-spacing: 0;
     color: black;
     text-shadow: none;
+    margin: 20px 0;
+}
+
+.description {
+    font-size: 1.2rem;
+}
+
+.back-to-homepage {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 70px;
+    border: 3px solid #d32d3b;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: transform 300ms ease;
+}
+
+.back-to-homepage:hover {
+    transform: scale(1.07);
+}
+
+.social {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+}
+
+.section-title {
+    text-shadow: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-icons .icon i {
+    font-size: 1.5rem;
+    transition: opacity 300ms ease-out;
 }
