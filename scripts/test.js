@@ -90,7 +90,7 @@ const wrapper = document.querySelector(".test-container");
     const response = await fetch(`https://odbproject.herokuapp.com/api/quiz/${id}`, {
         method: "GET"
     });
-
+    
     if (response.status === 200) {
         const quiz = await response.json()
 
@@ -191,7 +191,7 @@ const view = {
 
     for (let i = 0; i < questionDiv.length; i++) {
         questionDiv[i].onclick = function(event) {
-
+        let itemChildren;
         event = event || window.event;
         if(event.target.className === "correct"){
             view.correctAnswers++;
@@ -200,7 +200,7 @@ const view = {
         } else if(event.target.className === "wrong"){
             event.target.style.color = "#e74c3c";
             event.target.style.borderColor = "#e74c3c";
-            var itemChildren = event.target.parentNode.children;
+            itemChildren = event.target.parentNode.children;
             for(i = 0; i < itemChildren.length; i++){
             if(itemChildren[i].classList.contains("correct")){
                 itemChildren[i].style.color = "#2ecc71";
@@ -209,7 +209,7 @@ const view = {
             }
         }
 
-        const itemChildren = event.target.parentNode.children;
+        itemChildren = event.target.parentNode.children;
         for(i = 0; i < itemChildren.length; i++){
             itemChildren[i].classList.remove("correct");
             itemChildren[i].classList.remove("wrong");

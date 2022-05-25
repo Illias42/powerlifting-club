@@ -149,6 +149,7 @@ hr {
 }
 
 .comment-area .button {
+    display: none;
     border: 1px solid rgb(80, 80, 230);
     color: rgb(80, 80, 230);
     border-radius: 4px;

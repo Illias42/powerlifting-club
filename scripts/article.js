@@ -1,17 +1,24 @@
-const token = localStorage.getItem("Token");
-const user = JSON.parse(atob(token.split('.')[1]));
-
 const url = new URL(window.location.href);
 const wrapper = document.querySelector(".article-container");
 const avatar = document.querySelector(".comment-area img");
+const commentField = document.querySelector(".comment-area textarea");
 const commentInput = document.querySelector(".comment-area textarea");
 const commentButton = document.querySelector(".comment-area .button");
 const commentsContainer = document.querySelector(".comments-container");
 
 const commentsNumber = document.getElementById('comments-number');
 
-avatar.src = user.avatar;
-commentButton.addEventListener('click', sendComment);
+const token = localStorage.getItem("Token");
+let user;
+
+if (token) {
+  user = JSON.parse(atob(token.split('.')[1]));
+  avatar.src = user.avatar;
+  commentField.placeholder = "";
+  commentField.disabled = false;
+  commentButton.style.display = "block";
+  commentButton.addEventListener('click', sendComment);
+}
 
 const socket = io("https://odbproject.herokuapp.com/");
 socket.on("connect", () => console.log(`Connected. Id: ${socket.id}`))
