@@ -19,8 +19,6 @@ h1 {
     text-shadow: none;
 }
 
-
-
 .search {
     width: 100%;
     position: relative;
@@ -54,17 +52,18 @@ h1 {
 .tests-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px 10px;
+    grid-gap: 20px;
     margin-bottom: 40px;
 }
 
 .quiz {
     height: 200px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(226, 226, 226);
+    background-color: #ededed;
+    border: 1px solid rgb(80, 80, 230);
     border-radius: 5px;
 }
 
@@ -74,11 +73,11 @@ h1 {
 
 .quiz-header {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .quiz-author {
-    color: rgb(88, 88, 88);
+    color: rgb(80, 80, 80);
     font-weight: 500;
 }
 
@@ -87,7 +86,7 @@ h1 {
 }
 
 .quiz-questions {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .quiz > .start-btn {
@@ -102,11 +101,12 @@ h1 {
     text-align: center;
     line-height: 40px;
     text-decoration: none;
+    cursor: pointer;
+    transition: opacity 300ms ease;
 }
 
 .quiz > .start-btn:hover {
     opacity: 0.9;
-    cursor: pointer;
 }
 
 .quiz > .start-btn:active {
