@@ -197,6 +197,9 @@ const view = {
             view.correctAnswers++;
             event.target.style.color = "#2ecc71";
             event.target.style.borderColor = "#2ecc71";
+            
+            let correctSound = document.getElementById('correct-sound');
+		    correctSound.play();
         } else if(event.target.className === "wrong"){
             event.target.style.color = "#e74c3c";
             event.target.style.borderColor = "#e74c3c";
