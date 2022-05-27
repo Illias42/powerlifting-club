@@ -101,6 +101,70 @@ h1 {
     color: #444;
 }
 
+.toggle-about-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.toggle-about {
+    background-color: transparent;
+    padding: 8px 18px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid rgb(80, 80, 230);
+    border-radius: 25px;
+    color: rgb(80, 80, 230);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.toggle-about:hover,
+.toggle-about:focus {
+    background-color: rgb(80, 80, 230);
+    color: #fafafa;
+}
+
+.about {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    overflow: auto;
+    width: 500px;
+    max-width: 90%;
+    padding: 20px 20px 10px;
+    line-height: 1.5;
+    background-color: rgb(230, 230, 230);
+    color: rgb(20, 20, 20);
+    border-radius: 6px;
+    animation-name: aboutAnimate;
+    animation-duration: 0.5s;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0 20px 0;
+    font-weight: 500;
+}
+
+@keyframes aboutAnimate{
+    from{top: 0;}
+    to{top: 30%;}
+}
+
 @media (max-width: 767px) {
     .cabinet-menu-span {
         display: none;
