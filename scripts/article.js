@@ -26,6 +26,7 @@ socket.emit("join-room", url.searchParams.get("id"));
 socket.on("message", (data) => addComment(data));
 
 (async function getArticle() {
+  wrapper.classList.add("loading");
   const articleId = url.searchParams.get("id");
   const response = await fetch(`https://odbproject.herokuapp.com/api/articles/${articleId}`, {
     method: "GET",
@@ -35,8 +36,8 @@ socket.on("message", (data) => addComment(data));
   });
 
   if (response.status === 200) {
+    wrapper.classList.remove("loading");
     const data = await response.json();
-
     const date = new Date(data.article.createdAt);
     wrapper.innerHTML += `
       <div>
@@ -63,6 +64,7 @@ socket.on("message", (data) => addComment(data));
       createdAt: comment.createdAt
     }))
   } else {
+    wrapper.classList.remove("loading");
     throw new Error("Failed to get articles");
   }
 

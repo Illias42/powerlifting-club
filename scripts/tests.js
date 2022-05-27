@@ -1,19 +1,19 @@
 const container = document.querySelector(".tests-container");
 
 (async function getQuizzes() {
-  const token = localStorage.getItem("Token");
-  const user = JSON.parse(atob(token.split(".")[1]));
+  container.classList.add("loading");
+  const url = new URL(window.location.href);
+  const currentPage = url.searchParams.get("page");
 
-  const response = await fetch(`https://odbproject.herokuapp.com/api/quiz`, {
+  const response = await fetch(`https://odbproject.herokuapp.com/api/quiz/page/${currentPage}`, {
     method: "GET",
   });
 
   if (response.status === 200) {
-    const quizzes = await response.json();
+    container.classList.remove("loading");
+    const {quizzes, count} = await response.json();
 
     quizzes.map((quiz) => {
-        console.log(quiz);
-
         const comment = document.createElement("div");
         comment.className = "quiz";
         comment.innerHTML = `
@@ -26,7 +26,30 @@ const container = document.querySelector(".tests-container");
         `;
         container.prepend(comment);
     });
+
+    const navContainer = document.querySelector('.pagination');
+    const nav = document.createElement('ul');
+    const pagesCount = Math.ceil(count / 9);
+
+    console.log(count, pagesCount)
+
+    for(let i = 1; i <= pagesCount; i++) {
+      const page = document.createElement('li');
+      if(currentPage == i) {
+        page.innerHTML = `
+          <a class="active" href="tests.html?page=${i}">${i}</a>
+        `;
+      } else {
+        page.innerHTML = `
+          <a href="tests.html?page=${i}">${i}</a>
+        `;
+      }
+        
+      nav.append(page);
+    }
+    navContainer.prepend(nav);
   } else {
+    container.classList.remove("loading");
     throw new Error("Failed");
   }
 })().catch((err) => console.log(err.message));

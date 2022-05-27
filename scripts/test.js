@@ -79,9 +79,6 @@ function buildResult() {
 
 // GETTING THE TEST
 
-const token = localStorage.getItem("Token");
-const user = JSON.parse(atob(token.split('.')[1]));
-
 const url = new URL(window.location.href);
 const wrapper = document.querySelector(".test-container");
 
