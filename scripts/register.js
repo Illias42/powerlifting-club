@@ -54,6 +54,6 @@ async function registerSubmit(e) {
     }
 }
 
-async function changeAvatar(e) {
+function changeAvatar(e) {
     avatar.src = URL.createObjectURL(e.target.files[0]);
 }

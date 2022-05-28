@@ -8,10 +8,14 @@ const user = JSON.parse(atob(token.split('.')[1]));
 const username = document.querySelector('#current-user');
 const avatar = document.querySelector('.avatar img');
 
-username.innerHTML = `${user.name}`;
+
+username.innerHTML = user.name;
 avatar.src = user.avatar;
 
-
+if(user.about) {
+    const aboutText = document.querySelector('.about-text');
+    aboutText.innerHTML = user.about 
+}
 
 const openAboutBtn = document.querySelector('.toggle-about');
 openAboutBtn.addEventListener('click', openAbout);

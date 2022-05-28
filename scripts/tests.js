@@ -24,14 +24,12 @@ const container = document.querySelector(".tests-container");
             </div>
             <a class="start-btn" href="./test.html?id=${quiz.id}">Почати</a>
         `;
-        container.prepend(comment);
+        container.append(comment);
     });
 
     const navContainer = document.querySelector('.pagination');
     const nav = document.createElement('ul');
     const pagesCount = Math.ceil(count / 9);
-
-    console.log(count, pagesCount)
 
     for(let i = 1; i <= pagesCount; i++) {
       const page = document.createElement('li');
