@@ -79,7 +79,7 @@ function escapeCloseConfirm (event) {
 }
 
 async function deleteArticle(id) {
-    const response = await fetch(`https://odbproject.herokuapp.com/api/articles/myarticles/${id}`, {
+    const response = await fetch(`https://odbproject.herokuapp.com/api/articles/${id}`, {
         method: "DELETE"
     });
 

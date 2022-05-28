@@ -38,16 +38,40 @@ body {
     display: none;
 }
 
-.article {
-    background-color: #ededed;
+.article-container {
+    position: relative;
     width: 90%;
-    padding: 25px;
     border: 1px solid lightgray;
     border-radius: 5px;
     margin: 20px 10px;
+    background-color: #dddddd;
+    text-align: right;
+}
+
+.delete-item-btn {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.delete-item-btn i {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(139, 139, 139);
+}
+
+.article {
+    background-color: #ededed;
+    padding: 25px;
     display: flex;
     text-decoration: none;
     color: #262626;
+    text-align: left;
+    border-top: 1px solid lightgray;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .article:hover {
