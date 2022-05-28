@@ -34,8 +34,8 @@
                     <ul class="nav-links">
                         <li><a href="./standards.html">Нормативи</a></li>
                         <li><a href="./calculators.html">Калькулятори</a></li>
-                        <li><a href="./blog.html">Блог</a></li>
-                        <li><a href="./tests.html">Тести</a></li>
+                        <li><a href="./blog.html?page=1">Блог</a></li>
+                        <li><a href="./tests.html?page=1">Тести</a></li>
                         <li><a href="./contact.html">Контакти</a></li>
                     </ul>
                 </nav>
@@ -44,8 +44,8 @@
                     <ul class="nav-links">
                         <li><a href="./standards.html">Нормативи</a></li>
                         <li><a href="./calculators.html">Калькулятори</a></li>
-                        <li><a href="./blog.html">Блог</a></li>
-                        <li><a href="./tests.html">Тести</a></li>
+                        <li><a href="./blog.html?page=1">Блог</a></li>
+                        <li><a href="./tests.html?page=1">Тести</a></li>
                         <li><a href="./contact.html">Контакти</a></li>
                         <li>
                             <button type="button" class="login-btn" title="Log in">
@@ -99,17 +99,17 @@
             <form action="#" class="settings">
                 <div class="avatar-container">
                     <label id="avatar" for="change-avatar"><img src="./assets/images/default_user.png" /></label>
-                    <input accept="image/*" type="file" hidden name="change-avatar" id="change-avatar"/>
+                    <input accept="image/*" type="file" hidden name="avatar" id="change-avatar"/>
                 </div>
 
                 <label for="username">Ім'я</label>
-                <input type="text" name="username" id="username" class="settings-input">
+                <input type="text" name="name" id="name" class="settings-input">
 
                 <label for="last-name">Прізвище</label>
-                <input type="text" name="last-name" id="last-name" class="settings-input">
+                <input type="text" name="surname" id="surname" class="settings-input">
 
                 <label for="about-me">Про себе</label>
-                <textarea name="about-me" id="about-me" cols="30" rows="10"></textarea>
+                <textarea name="about" id="about-me" cols="30" rows="10"></textarea>
 
                 <label for="email">Електронна пошта</label>
                 <input type="email" name="email" id="email" class="settings-input">
@@ -144,7 +144,7 @@
                 <input type="password" placeholder="Введіть пароль" name="log-password" id="log-password" class="login-input" required>
                 <i class="bi bi-eye-slash toggle-password"></i>
 
-                <button type="submit" class="submit-btn">Увійти</button>
+                <button type="submit" class="submit-btn"><span>Увійти</span></button>
                 <a href="./forgotpsw.html" class="forgot-psw">Забули пароль?</a>
                 <footer class="login-footer">
                     <a href="./register.html" class="register-account">Реєстрація</a>

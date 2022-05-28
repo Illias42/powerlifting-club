@@ -1,7 +1,7 @@
 'use strict';
 
 const modal = document.querySelector('.login-modal');
-
+const submitBtn = document.querySelector('.submit-btn');
 const openBtn = document.querySelectorAll('.login-btn');
 for(let i = 0; i < openBtn.length; i++) {
     openBtn[i].addEventListener('click', openModal);
@@ -53,6 +53,8 @@ loginForm.addEventListener('submit', loginSubmit);
 
 async function loginSubmit(e) {
     e.preventDefault();
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
 
     const email = e.target[1].value;
     const password = e.target[2].value;
@@ -68,11 +70,15 @@ async function loginSubmit(e) {
     });
 
     if (response.status === 201) {
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
         const data = await response.json()
         localStorage.setItem("Token", `Bearer ${data.token}`);
         window.location.replace('./cabinet.html');
         closeModal();
     } else {
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
         const message = "Не вдалось увійти. Перевірте введені дані.";
         const errBlock = document.getElementById('log-errors');
         errBlock.innerHTML = message;

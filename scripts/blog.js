@@ -1,7 +1,10 @@
 const content = document.querySelector(".articles-container");
 
 (async function getArticles() {
-  const response = await fetch("https://odbproject.herokuapp.com/api/articles/", {
+  content.classList.add("loading");
+  const url = new URL(window.location.href);
+  const currentPage = url.searchParams.get("page");
+  const response = await fetch(`https://odbproject.herokuapp.com/api/articles/page/${currentPage}`, {
     method: "GET",
     headers: {
       Authorization: localStorage.getItem("Token"),
@@ -9,9 +12,10 @@ const content = document.querySelector(".articles-container");
   });
 
   if (response.status === 200) {
-    const data = await response.json();
-    console.log(data);
-    data.articles.map((article) => {
+    content.classList.remove("loading");
+    const {articles, count} = await response.json();
+
+    articles.map((article) => {
       const date = new Date(article.createdAt);
       content.innerHTML += `
         <a class="article" href="./article.html?id=${article.id}">  
@@ -28,6 +32,26 @@ const content = document.querySelector(".articles-container");
         </a>
         `;
     });
+
+    const navContainer = document.querySelector('.pagination');
+    const nav = document.createElement('ul');
+    const pagesCount = Math.ceil(count / 5);
+
+    for(let i = 1; i <= pagesCount; i++) {
+      const page = document.createElement('li');
+      if(currentPage == i) {
+        page.innerHTML = `
+          <a class="active" href="blog.html?page=${i}">${i}</a>
+        `;
+      } else {
+        page.innerHTML = `
+          <a href="blog.html?page=${i}">${i}</a>
+        `;
+      }
+        
+      nav.append(page);
+    }
+    navContainer.prepend(nav);
   } else {
     throw new Error("Failed to get articles")
   }
