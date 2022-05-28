@@ -85,4 +85,8 @@ testForm.addEventListener('submit', async (e) => {
             Authorization: localStorage.getItem("Token"),
         }
     });
+
+    if(res.status === 201) {
+        window.location.replace('./mytests.html');
+    }
 });
