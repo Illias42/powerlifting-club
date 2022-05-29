@@ -19,8 +19,6 @@ h1 {
     text-shadow: none;
 }
 
-
-
 .search {
     width: 100%;
     position: relative;
@@ -107,6 +105,7 @@ h1 {
 .quiz-author {
     color: rgb(88, 88, 88);
     font-weight: 500;
+    text-decoration: none;
 }
 
 .quiz-author:hover {

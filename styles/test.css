@@ -31,6 +31,11 @@ body {
     margin-bottom: 20px;
 }
 
+#head a {
+    color: #000;
+    text-decoration: none;
+}
+
 #author {
     display: flex;
     align-items: center;

@@ -14,17 +14,17 @@ const container = document.querySelector(".tests-container");
     const {quizzes, count} = await response.json();
 
     quizzes.map((quiz) => {
-        const comment = document.createElement("div");
-        comment.className = "quiz";
-        comment.innerHTML = `
+        const content = document.createElement("div");
+        content.className = "quiz";
+        content.innerHTML = `
             <div>
                 <p class="quiz-header">${quiz.name}</p>
-                <p>Автор: <span class="quiz-author">${quiz.author.name + " " + quiz.author.surname}</span></p>
+                <p>Автор: <a href="./profile.html?id=${quiz.author.id}" class="quiz-author">${quiz.author.name + " " + quiz.author.surname}</a></p>
                 <p>Кількість питань: <span class="quiz-questions">${quiz.questions.length}</p>
             </div>
             <a class="start-btn" href="./test.html?id=${quiz.id}">Почати</a>
         `;
-        container.append(comment);
+        container.append(content);
     });
 
     const navContainer = document.querySelector('.pagination');

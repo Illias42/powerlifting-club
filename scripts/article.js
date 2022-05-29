@@ -44,7 +44,7 @@ socket.on("message", (data) => addComment(data));
         <div id="head">
           <div id="author">
             <img src="${data.article.author.avatar}" />
-            <span>${data.article.author.name} ${data.article.author.surname}<span>
+            <span><a href="./profile.html?id=${data.article.author.id}">${data.article.author.name} ${data.article.author.surname}</a><span>
           </div>
           <div>
             <span id="created-at">${date.toLocaleTimeString()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</span>
@@ -58,6 +58,7 @@ socket.on("message", (data) => addComment(data));
     `
 
     data.article.comments.map(comment => addComment({
+      authorId: comment.author.id,
       avatar: comment.author.avatar,
       author: comment.author.name + " " + comment.author.surname,
       text: comment.text,
@@ -91,12 +92,13 @@ async function sendComment() {
 
 async function addComment(data) {
   const comment = document.createElement('div');
+  console.log(data);
   comment.className = "comment";
   comment.innerHTML = `
     <img src="${data.avatar}" />
-      <div>
-        <p>${data.author}</p>
-        <div class="content">${data.text}</div>
+    <div>
+      <p><a href="./profile.html?id=${data.authorId}">${data.author}</a></p>
+      <div class="content">${data.text}</div>
     </div>
   `;
   commentsContainer.prepend(comment);

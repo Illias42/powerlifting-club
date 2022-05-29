@@ -101,7 +101,7 @@ const wrapper = document.querySelector(".test-container");
             <div id="head">
                 <div id="author">
                 <img src="${quiz.author.avatar}" />
-                <span>${quiz.author.name} ${quiz.author.surname}<span>
+                <span><a href="./profile.html?id=${quiz.author.id}">${quiz.author.name} ${quiz.author.surname}</a></span>
                 </div>
                 <div>
                     <span id="created-at">${date.toLocaleTimeString()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</span>
