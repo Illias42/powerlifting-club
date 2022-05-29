@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerlifting Club | Користувач</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/profile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <script src="https://kit.fontawesome.com/6f7f0b57e4.js" crossorigin="anonymous" defer></script>
+    <script src="./scripts/login.js" defer></script>
+    <script src="./scripts/profile.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="./index.html" class="logo"><img src="./assets/images/logo.png" alt="Logo" width="206" height="27"></a>
+            <div class="menu-container">
+                <nav class="mobile-menu">
+                    <input id="menu-toggle" type="checkbox">
+                    <label class="menu-btn" for="menu-toggle">
+                        <span></span>
+                    </label>
+                    <button type="button" class="login-btn" title="Log in">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="./standards.html">Нормативи</a></li>
+                        <li><a href="./calculators.html">Калькулятори</a></li>
+                        <li><a href="./blog.html?page=1">Блог</a></li>
+                        <li><a href="./tests.html?page=1">Тести</a></li>
+                        <li><a href="./contact.html">Контакти</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="desktop-menu">
+                    <ul class="nav-links">
+                        <li><a href="./standards.html">Нормативи</a></li>
+                        <li><a href="./calculators.html">Калькулятори</a></li>
+                        <li><a href="./blog.html?page=1">Блог</a></li>
+                        <li><a href="./tests.html?page=1">Тести</a></li>
+                        <li><a href="./contact.html">Контакти</a></li>
+                        <li>
+                            <button type="button" class="login-btn" title="Log in">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <main class="profile-container">
+            <div class="avatar">
+                <img src="./assets/images/default_user.png" alt="Фото профілю" class="user-img">
+            </div>
+            <h1 id="user-name">User Name</h1>
+
+            <section class="about">
+                <h2 class="section-title">Про себе</h2>
+                <p id="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad pariatur eos quaerat numquam unde quibusdam ullam autem, sunt debitis expedita enim accusamus non, aliquam accusantium beatae sint delectus rem quia!</p>
+            </section>
+            <section class="contact">
+                <h2 class="section-title">Електронна пошта: <span id="user-email">example@yahoo.com</span></h2>
+            </section>
+
+            <section class="impact">
+                <h2 class="section-title">Внесок у розвиток спільноти</h2>
+                <div class="impact-type-container">
+                    <button type="button" class="impact-btn articles-btn selected">Статті</button>
+                    <button type="button" class="impact-btn tests-btn">Тести</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="login-modal">
+        <form action="#" method="POST" class="modal-content">
+            <button type="button" class="close-modal xmark-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <header class="modal-header">
+                <h2 class="modal-title">Вхід в обліковий запис</h2>
+            </header>
+            <div class="login-container">
+                <div id="log-errors"></div>
+                <label for="log-email">Адреса електронної пошти</label>
+                <input type="email" placeholder="Введіть адресу електронної пошти" name="log-email" id="log-email" class="login-input" required>
+
+                <label for="log-password">Пароль</label>
+                <input type="password" placeholder="Введіть пароль" name="log-password" id="log-password" class="login-input" required>
+                <i class="bi bi-eye-slash toggle-password"></i>
+
+                <button type="submit" class="submit-btn"><span>Увійти</span></button>
+                <a href="./forgotpsw.html" class="forgot-psw">Забули пароль?</a>
+                <footer class="login-footer">
+                    <a href="./register.html" class="register-account">Реєстрація</a>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p><span>Powerlifting Club</span><br> Made by computer engineering students at LPNU</p>
+    </footer>
+</body>
+</html>

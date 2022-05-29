@@ -1,0 +1,122 @@
+body {
+    background-color: inherit;
+    background: url(../assets/images/background-3.png) no-repeat center center;
+    background-size: cover;
+    color: black;
+    min-height: 100vh;
+}
+
+.header {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.main-content {
+    margin-top: 120px;
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.profile-container section{
+    border-top: 1px solid rgb(230, 230, 230);
+    padding: 20px 0;
+}
+
+section.impact {
+    padding-top: 50px;
+}
+
+section.impact .section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1#user-name {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 0;
+    color: rgb(20, 20, 20);
+    text-shadow: none;
+    margin-bottom: 70px;
+    color: rgb(40, 40, 40);
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px auto;
+}
+
+.user-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    clip-path: circle();
+}
+
+h2.section-title {
+    text-shadow: none;
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+#about-text {
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+#user-email {
+    font-weight: 400;
+    font-size: 0.95em;
+    color: rgb(40, 40, 40);
+}
+
+.impact-type-container {
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+.impact-btn {
+    border: 1px solid rgb(80, 80, 230);
+    outline: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 90px;
+    margin: 0 15px;
+    padding: 5px 15px;
+    background-color: transparent;
+    color: rgb(80, 80, 230);
+}
+
+.impact-btn:hover{
+    background-color: rgb(80, 80, 230);
+    color: rgb(220, 220, 220);
+}
+
+.selected {
+    background-color: rgb(80, 80, 230);
+    color: rgb(220, 220, 220);
+}
+
+.articles-container {
+    background-color: yellow;
+    height: 100px;
+    width: 100%;
+}
+
+.tests-container {
+    background-color: blue;
+    height: 100px;
+    width: 100%;
+}
