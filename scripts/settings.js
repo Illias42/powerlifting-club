@@ -94,8 +94,18 @@ const deleteAccountBtn = document.querySelector('.yes-btn');
 deleteAccountBtn.addEventListener('click', deleteAccount);
 
 // Підтверджено видалення акаунту
-function deleteAccount() {
-    console.log('Deleted');
+async function deleteAccount() {
+    const response = await fetch(`https://odbproject.herokuapp.com/api/users/${user.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: localStorage.getItem("Token"),
+        }
+    });
 
-    // ...
+    if(response.status === 204) {
+        localStorage.removeItem("Token");
+        window.location.replace('./index.html');
+    }
+
+    closeConfirmModal();
 }
