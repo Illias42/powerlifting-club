@@ -83,7 +83,10 @@ function escapeCloseConfirm (event) {
 
 async function deleteTest(id) {
     const response = await fetch(`https://odbproject.herokuapp.com/api/quiz/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: {
+            Authorization: localStorage.getItem("Token"),
+        }
     });
 
     if(response.status === 204) {
