@@ -16,6 +16,10 @@
     opacity: 0.85;
 }
 
+.cabinet-container {
+    position: relative;
+}
+
 .cabinet-container > h1 {
     margin-bottom: 20px;
 }
@@ -163,6 +167,22 @@
 .cancel-btn {
     border: 1px solid gray;
     color: black;
+}
+
+.no-tests-message {
+    text-align: center;
+    line-height: 1.5;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #454545;
+}
+
+.hide-message {
+    display: none;
 }
 
 @media (max-width: 1437px) {

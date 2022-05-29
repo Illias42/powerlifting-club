@@ -1,4 +1,5 @@
 const content = document.querySelector(".articles-list");
+const noArticlesMessage = document.querySelector('.no-articles-message');
 
 (async function getArticles() {
   const response = await fetch("https://odbproject.herokuapp.com/api/articles/myarticles", {
@@ -31,7 +32,12 @@ const content = document.querySelector(".articles-list");
             </a>
           </div>
         `;
-    })
+    });
+
+    if (content.innerHTML === '') {
+      noArticlesMessage.classList.remove('hide-message');
+    }
+
   } else {
     throw new Error("Failed to get articles")
   }
@@ -92,4 +98,6 @@ async function deleteArticle(id) {
     }
 
     closeConfirmModal();
+
+    document.location.reload();
 }

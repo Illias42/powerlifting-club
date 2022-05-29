@@ -1,4 +1,5 @@
 const content = document.querySelector('.tests-list');
+const noTestsMessage = document.querySelector('.no-tests-message');
 
 (async function getQuizzes() {
     const token = localStorage.getItem("Token");
@@ -34,6 +35,10 @@ const content = document.querySelector('.tests-list');
             </div>
             `;
         });
+
+        if (content.innerHTML === '') {
+            noTestsMessage.classList.remove('hide-message');
+        }
 
     } else {
         throw new Error("Failed");
@@ -95,4 +100,6 @@ async function deleteTest(id) {
     }
 
     closeConfirmModal();
+
+    document.location.reload();
 }
