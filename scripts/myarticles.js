@@ -2,6 +2,7 @@ const content = document.querySelector(".articles-list");
 const noArticlesMessage = document.querySelector('.no-articles-message');
 
 (async function getArticles() {
+  content.classList.add("loading");
   const response = await fetch("https://odbproject.herokuapp.com/api/articles/myarticles", {
     method: "GET",
     headers: {
@@ -10,6 +11,7 @@ const noArticlesMessage = document.querySelector('.no-articles-message');
   });
 
   if (response.status === 200) {
+    content.classList.remove("loading");
     const data = await response.json();
     data.articles.map((article) => {
         const date = new Date(article.createdAt);

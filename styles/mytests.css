@@ -38,6 +38,32 @@
     display: none;
 }
 
+.tests-list.loading::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 5px solid transparent;
+    border-top-color: rgb(102, 102, 255);
+    border-radius: 50%;
+    animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+}
+
 .test-container {
     position: relative;
     flex-basis: 500px;

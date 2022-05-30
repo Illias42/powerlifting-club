@@ -2,6 +2,7 @@ const content = document.querySelector('.tests-list');
 const noTestsMessage = document.querySelector('.no-tests-message');
 
 (async function getQuizzes() {
+    content.classList.add("loading");
     const token = localStorage.getItem("Token");
     const user = JSON.parse(atob(token.split('.')[1]));
     
@@ -10,6 +11,8 @@ const noTestsMessage = document.querySelector('.no-tests-message');
     });
 
     if (response.status === 200) {
+        content.classList.remove("loading");
+        
         const quizzes = await response.json()
 
         quizzes.map((quiz) => {
