@@ -189,7 +189,7 @@ const view = {
     for (let i = 0; i < questionDiv.length; i++) {
         questionDiv[i].onclick = function(event) {
         let itemChildren;
-        event = event || window.event;
+        
         if(event.target.className === "correct"){
             view.correctAnswers++;
             event.target.style.color = "#2ecc71";
@@ -197,6 +197,12 @@ const view = {
             
             let correctSound = document.getElementById('correct-sound');
 		    correctSound.play();
+
+            itemChildren = event.target.parentNode.children;
+        for(i = 0; i < itemChildren.length; i++){
+            itemChildren[i].classList.remove("correct");
+            itemChildren[i].classList.remove("wrong");
+        }
         } else if(event.target.className === "wrong"){
             event.target.style.color = "#e74c3c";
             event.target.style.borderColor = "#e74c3c";
@@ -207,12 +213,12 @@ const view = {
                 itemChildren[i].style.borderColor = "#2ecc71";
             }
             }
-        }
 
-        itemChildren = event.target.parentNode.children;
+            itemChildren = event.target.parentNode.children;
         for(i = 0; i < itemChildren.length; i++){
             itemChildren[i].classList.remove("correct");
             itemChildren[i].classList.remove("wrong");
+        }
         }
         }
     }
