@@ -1,3 +1,8 @@
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});
+
 const form = document.getElementById('article-form');
 form.addEventListener("submit", submitArticle);
 
